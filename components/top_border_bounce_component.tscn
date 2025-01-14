@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgcrxun1a0u2s"]
+
+[ext_resource type="Script" path="res://components/top_border_bounce_component.gd" id="1_5iclr"]
+
+[node name="TopBorderBounceComponent" type="Node"]
+script = ExtResource("1_5iclr")

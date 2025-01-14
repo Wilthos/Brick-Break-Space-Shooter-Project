@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhdbcqhia7siy"]
+
+[ext_resource type="Script" path="res://components/move_component.gd" id="1_g4an6"]
+[ext_resource type="Texture2D" uid="uid://cid2dqqamijd5" path="res://assets/Spnning Orb/Blue/frame 1.png" id="1_sbio1"]
+[ext_resource type="Texture2D" uid="uid://n37d5xukk3di" path="res://assets/Spnning Orb/Blue/frame 2.png" id="2_jex41"]
+[ext_resource type="Texture2D" uid="uid://jb4boekqhabt" path="res://assets/Spnning Orb/Blue/frame 3.png" id="3_dxbsa"]
+[ext_resource type="Texture2D" uid="uid://bbfmrut5vx0mw" path="res://assets/Spnning Orb/Blue/frame 4.png" id="4_1eguw"]
+[ext_resource type="Texture2D" uid="uid://beymp2o25anih" path="res://assets/Spnning Orb/Blue/frame 5.png" id="5_dl1lj"]
+[ext_resource type="Texture2D" uid="uid://cbfekrjnwmnic" path="res://assets/Spnning Orb/Blue/frame 6.png" id="6_377jo"]
+[ext_resource type="Script" path="res://components/stats_component.gd" id="8_dap8g"]
+[ext_resource type="Script" path="res://components/border_bounce_component.gd" id="9_b2u7a"]
+[ext_resource type="Script" path="res://components/top_border_bounce_component.gd" id="10_pyd7a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lg5h4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sbio1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jex41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dxbsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1eguw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dl1lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_377jo")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 10.0
+}]
+
+[node name="PlayerBall" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.03, 0.03)
+sprite_frames = SubResource("SpriteFrames_lg5h4")
+animation = &"normal"
+autoplay = "normal"
+frame_progress = 0.183739
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("1_g4an6")
+actor = NodePath("..")
+velocity = Vector2(40, -50)
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("8_dap8g")
+health = 3
+
+[node name="BorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "move_component")]
+script = ExtResource("9_b2u7a")
+actor = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="TopBorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "move_component")]
+script = ExtResource("10_pyd7a")
+actor = NodePath("..")
+move_component = NodePath("../MoveComponent")

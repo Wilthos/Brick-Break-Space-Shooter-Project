@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://do8kovgtd845u"]
+
+[ext_resource type="PackedScene" uid="uid://s4bskxq1avo4" path="res://enemies/enemy.tscn" id="1_l5pvx"]
+[ext_resource type="Texture2D" uid="uid://cmwuh2h0tcsv7" path="res://assets/green_enemy.png" id="2_hhd1d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3m12"]
+atlas = ExtResource("2_hhd1d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfayb"]
+atlas = ExtResource("2_hhd1d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_068by"]
+atlas = ExtResource("2_hhd1d")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rqb8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3m12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfayb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_068by")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_out0u"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gtb54"]
+radius = 6.0
+
+[node name="GreenEnemy" instance=ExtResource("1_l5pvx")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_rqb8q")
+animation = &"move"
+autoplay = "move"
+frame_progress = 0.70299
+
+[node name="StatsComponent" parent="." index="1"]
+health = 3
+
+[node name="MoveComponent" parent="." index="2"]
+velocity = Vector2(0, 40)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
+position = Vector2(4.17233e-07, 0)
+scale = Vector2(0.8, 0.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("CircleShape2D_out0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CircleShape2D_gtb54")
+debug_color = Color(0.959656, 2.88785e-07, 0.520413, 0.42)
