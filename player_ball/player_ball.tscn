@@ -1,15 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhdbcqhia7siy"]
+[gd_scene load_steps=17 format=3 uid="uid://bhdbcqhia7siy"]
 
 [ext_resource type="Script" path="res://components/move_component.gd" id="1_g4an6"]
-[ext_resource type="Texture2D" uid="uid://cid2dqqamijd5" path="res://assets/Spnning Orb/Blue/frame 1.png" id="1_sbio1"]
-[ext_resource type="Texture2D" uid="uid://n37d5xukk3di" path="res://assets/Spnning Orb/Blue/frame 2.png" id="2_jex41"]
-[ext_resource type="Texture2D" uid="uid://jb4boekqhabt" path="res://assets/Spnning Orb/Blue/frame 3.png" id="3_dxbsa"]
-[ext_resource type="Texture2D" uid="uid://bbfmrut5vx0mw" path="res://assets/Spnning Orb/Blue/frame 4.png" id="4_1eguw"]
-[ext_resource type="Texture2D" uid="uid://beymp2o25anih" path="res://assets/Spnning Orb/Blue/frame 5.png" id="5_dl1lj"]
-[ext_resource type="Texture2D" uid="uid://cbfekrjnwmnic" path="res://assets/Spnning Orb/Blue/frame 6.png" id="6_377jo"]
+[ext_resource type="Texture2D" uid="uid://cid2dqqamijd5" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 1.png" id="1_sbio1"]
+[ext_resource type="Script" path="res://player_ball/player_ball.gd" id="1_uyugo"]
+[ext_resource type="Texture2D" uid="uid://n37d5xukk3di" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 2.png" id="2_jex41"]
+[ext_resource type="Texture2D" uid="uid://jb4boekqhabt" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 3.png" id="3_dxbsa"]
+[ext_resource type="Texture2D" uid="uid://bbfmrut5vx0mw" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 4.png" id="4_1eguw"]
+[ext_resource type="Texture2D" uid="uid://beymp2o25anih" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 5.png" id="5_dl1lj"]
+[ext_resource type="Texture2D" uid="uid://cbfekrjnwmnic" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 6.png" id="6_377jo"]
 [ext_resource type="Script" path="res://components/stats_component.gd" id="8_dap8g"]
 [ext_resource type="Script" path="res://components/border_bounce_component.gd" id="9_b2u7a"]
 [ext_resource type="Script" path="res://components/top_border_bounce_component.gd" id="10_pyd7a"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="11_6iafi"]
+[ext_resource type="Script" path="res://components/hurtbox_component.gd" id="11_b5nql"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lg5h4"]
 animations = [{
@@ -37,7 +40,14 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qg7gv"]
+radius = 4.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_78miv"]
+radius = 4.75
+
 [node name="PlayerBall" type="Node2D"]
+script = ExtResource("1_uyugo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -65,3 +75,19 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("10_pyd7a")
 actor = NodePath("..")
 move_component = NodePath("../MoveComponent")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("11_6iafi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_qg7gv")
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("11_b5nql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("CircleShape2D_78miv")
