@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bhdbcqhia7siy"]
 
-[ext_resource type="Script" path="res://components/move_component.gd" id="1_g4an6"]
+[ext_resource type="Script" path="res://components/ball_boarder_bounce_component.gd" id="1_qwl3x"]
 [ext_resource type="Texture2D" uid="uid://cid2dqqamijd5" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 1.png" id="1_sbio1"]
 [ext_resource type="Script" path="res://player_ball/player_ball.gd" id="1_uyugo"]
 [ext_resource type="Texture2D" uid="uid://n37d5xukk3di" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 2.png" id="2_jex41"]
@@ -9,10 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://beymp2o25anih" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 5.png" id="5_dl1lj"]
 [ext_resource type="Texture2D" uid="uid://cbfekrjnwmnic" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 6.png" id="6_377jo"]
 [ext_resource type="Script" path="res://components/stats_component.gd" id="8_dap8g"]
-[ext_resource type="Script" path="res://components/border_bounce_component.gd" id="9_b2u7a"]
 [ext_resource type="Script" path="res://components/top_border_bounce_component.gd" id="10_pyd7a"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="11_6iafi"]
 [ext_resource type="Script" path="res://components/hurtbox_component.gd" id="11_b5nql"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71dvj"]
+radius = 4.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lg5h4"]
 animations = [{
@@ -41,13 +43,18 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qg7gv"]
-radius = 4.8
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78miv"]
-radius = 4.75
+radius = 4.0
 
-[node name="PlayerBall" type="Node2D"]
+[node name="PlayerBall" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 16
 script = ExtResource("1_uyugo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_71dvj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -57,24 +64,19 @@ animation = &"normal"
 autoplay = "normal"
 frame_progress = 0.183739
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("1_g4an6")
-actor = NodePath("..")
-velocity = Vector2(40, -50)
-
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("8_dap8g")
 health = 3
 
-[node name="BorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "move_component")]
-script = ExtResource("9_b2u7a")
+[node name="BallBorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("1_qwl3x")
+margin = 3
 actor = NodePath("..")
-move_component = NodePath("../MoveComponent")
 
-[node name="TopBorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "move_component")]
+[node name="TopBorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("10_pyd7a")
+margin = 3
 actor = NodePath("..")
-move_component = NodePath("../MoveComponent")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
 collision_layer = 0

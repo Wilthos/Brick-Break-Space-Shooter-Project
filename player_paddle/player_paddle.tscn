@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://tmwgcd083lhh"]
+[gd_scene load_steps=4 format=3 uid="uid://tmwgcd083lhh"]
 
+[ext_resource type="Script" path="res://player_paddle/player_paddle.gd" id="1_cglaa"]
 [ext_resource type="Texture2D" uid="uid://bqca3kev2jp8c" path="res://assets/Brick_Breaker_Assets/gray_paddle.png" id="1_fcb1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kn7xc"]
-size = Vector2(16, 4.5)
+size = Vector2(20, 6)
 
-[node name="PlayerPaddle" type="RigidBody2D"]
-gravity_scale = 0.0
+[node name="PlayerPaddle" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1_cglaa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+position = Vector2(4.76837e-07, -2.58287e-07)
+scale = Vector2(0.625, 0.666667)
 texture = ExtResource("1_fcb1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.0078125)
 shape = SubResource("RectangleShape2D_kn7xc")

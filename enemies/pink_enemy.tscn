@@ -107,10 +107,9 @@ script = ExtResource("4_kcgip")
 actor = NodePath("../../..")
 velocity = Vector2(20, 0)
 
-[node name="BorderBounceComponent" type="Node" parent="States/MoveSideState" index="1" node_paths=PackedStringArray("actor", "move_component")]
+[node name="BorderBounceComponent" type="Node" parent="States/MoveSideState" index="1" node_paths=PackedStringArray("actor")]
 script = ExtResource("5_davpt")
 actor = NodePath("../../..")
-move_component = NodePath("../MoveSideComponent")
 
 [node name="FireState" type="Node" parent="States" index="2"]
 unique_name_in_owner = true

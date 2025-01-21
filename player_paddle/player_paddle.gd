@@ -1,0 +1,2 @@
+class_name PlayerPaddle
+extends CharacterBody2D

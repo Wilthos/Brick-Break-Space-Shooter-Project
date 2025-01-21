@@ -4,10 +4,12 @@ extends Node2D
 
 @onready var ship: Node2D = $Ship
 @onready var score_label: Label = $ScoreLabel
+@onready var player_ball: PlayerBall = $PlayerBall
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
+	player_ball.velocity = Vector2(20,50)
 	update_score_label(game_stats.score)
 	game_stats.score_changed.connect(update_score_label)
 	
