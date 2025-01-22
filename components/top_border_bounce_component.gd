@@ -9,7 +9,7 @@ extends Node
 @export var actor: Node2D
 
 # We need to grab the move component of the actor in order to change its velocity when bouncing
-#@export var move_component: MoveComponent
+@export var move_component: MoveComponent
 
 # Define the left and right borders to bounce on
 var top_border = 0
@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		# When bouncing we use the .bounce function which takes a wall normal
 		# This wall normal is the direction of the face of the wall
 		# (it's a bit counter intuitive but a wall on the top would have a wall face with a normal of UP)
-		actor.velocity = actor.velocity.bounce(Vector2.UP)
+		move_component.velocity = move_component.velocity.bounce(Vector2.UP)
 	# If the actor's x position is greater than the right border plus the margin,
 	# bounce off the right side of the screen
 	#elif actor.global_position.x > right_border - margin:

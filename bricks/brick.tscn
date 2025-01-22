@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxiaq4p5nmrcd"]
+
+[ext_resource type="Script" path="res://bricks/brick.gd" id="1_ksjbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioqc1"]
+
+[node name="Brick" type="RigidBody2D"]
+script = ExtResource("1_ksjbf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ioqc1")

@@ -7,14 +7,15 @@ extends CharacterBody2D
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 @onready var stats_component: StatsComponent = $StatsComponent
+@onready var move_component: MoveComponent = $MoveComponent
 
 func _ready() -> void:
 	hurtbox_component.hurt.connect(func(hitbox: HitboxComponent):
-		#position = Vector2(80,200)
-		position = Vector2(40,200)
+		position = Vector2(80,200)
+		#position = Vector2(40,200)
 		#print(ship.position)
-		#velocity = Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized() * ball_speed
-		velocity = Vector2(0,50)
+		move_component.velocity = Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized() * ball_speed
+		#move_component.velocity = Vector2(0,50)
 		#print("Ball Health: ", stats_component.health)
 	)
 	stats_component.no_health.connect(queue_free)
@@ -23,10 +24,10 @@ func _ready() -> void:
 	#visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
 
 func _physics_process(delta):
-	var collision = move_and_collide(velocity * delta)
+	var collision = move_and_collide(move_component.velocity * delta)
 	if(!collision):
 		return
 		
 	#print_debug("v before ",velocity)
-	velocity = velocity.bounce(collision.get_normal())
+	move_component.velocity = move_component.velocity.bounce(collision.get_normal())
 	#print_debug("v After ", velocity)
