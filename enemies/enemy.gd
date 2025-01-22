@@ -24,6 +24,7 @@ func _ready() -> void:
 		flash_component.flash()
 		shake_component.tween_shake()
 		variable_pitch_audio_stream_player.play_with_variance()
+		print("Green Enemy Health: ", stats_component.health)
 	)
 	stats_component.no_health.connect(queue_free)
 	hitbox_component.hit_hurtbox.connect(destroyed_component.destroy.unbind(1))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhdbcqhia7siy"]
+[gd_scene load_steps=18 format=3 uid="uid://bhdbcqhia7siy"]
 
 [ext_resource type="Script" path="res://components/ball_boarder_bounce_component.gd" id="1_qwl3x"]
 [ext_resource type="Texture2D" uid="uid://cid2dqqamijd5" path="res://assets/Brick_Breaker_Assets/Spnning Orb/Blue/frame 1.png" id="1_sbio1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://components/top_border_bounce_component.gd" id="10_pyd7a"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="11_6iafi"]
 [ext_resource type="Script" path="res://components/hurtbox_component.gd" id="11_b5nql"]
+[ext_resource type="Script" path="res://components/hurt_component.gd" id="13_85d1a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_71dvj"]
 radius = 4.0
@@ -80,7 +81,7 @@ actor = NodePath("..")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 0
 script = ExtResource("11_6iafi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
@@ -93,3 +94,12 @@ script = ExtResource("11_b5nql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("CircleShape2D_78miv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.5332e-07, 6.85453e-07)
+scale = Vector2(0.477, 0.477)
+
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component", "hurtbox_component")]
+script = ExtResource("13_85d1a")
+stats_component = NodePath("../StatsComponent")
+hurtbox_component = NodePath("../HurtboxComponent")

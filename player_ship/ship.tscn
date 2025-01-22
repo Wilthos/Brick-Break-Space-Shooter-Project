@@ -124,7 +124,6 @@ script = ExtResource("1_eocui")
 [node name="Anchor" type="Node2D" parent="."]
 
 [node name="PlayerPaddle" parent="Anchor" instance=ExtResource("18_yl1cc")]
-unique_name_in_owner = true
 position = Vector2(0, -10)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor"]

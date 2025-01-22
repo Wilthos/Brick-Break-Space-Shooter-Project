@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://kv1ad4msgxqs"]
+[gd_scene load_steps=10 format=3 uid="uid://kv1ad4msgxqs"]
 
 [ext_resource type="PackedScene" uid="uid://buhk4f2lxlx3u" path="res://player_ship/ship.tscn" id="1_u6n25"]
 [ext_resource type="Script" path="res://world.gd" id="1_y13p3"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://d1ccj87q8icgc" path="res://enemies/enemy_generator.tscn" id="3_eb2d8"]
 [ext_resource type="LabelSettings" uid="uid://dmtgl4wsvfd7y" path="res://fonts/default_label_settings.tres" id="5_wic0o"]
 [ext_resource type="PackedScene" uid="uid://bhdbcqhia7siy" path="res://player_ball/player_ball.tscn" id="7_umxke"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="8_wcmc4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqhio"]
+size = Vector2(160, 22)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_y13p3")
@@ -28,4 +32,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayerBall" parent="." instance=ExtResource("7_umxke")]
-position = Vector2(80, 193)
+position = Vector2(80, 194)
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("8_wcmc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(80, 251)
+shape = SubResource("RectangleShape2D_uqhio")
