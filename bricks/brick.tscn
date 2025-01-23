@@ -1,13 +1,67 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxiaq4p5nmrcd"]
+[gd_scene load_steps=14 format=3 uid="uid://dxiaq4p5nmrcd"]
 
 [ext_resource type="Script" path="res://bricks/brick.gd" id="1_ksjbf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioqc1"]
+[ext_resource type="Script" path="res://components/hurtbox_component.gd" id="2_vndaf"]
+[ext_resource type="Script" path="res://components/hurt_component.gd" id="3_qcgmy"]
+[ext_resource type="Script" path="res://components/stats_component.gd" id="4_4nwio"]
+[ext_resource type="Script" path="res://components/flash_component.gd" id="6_veu71"]
+[ext_resource type="Script" path="res://components/shake_component.gd" id="7_38jxa"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="8_cudlo"]
+[ext_resource type="PackedScene" uid="uid://cws51pvav0gk8" path="res://effects/explosion_effect.tscn" id="9_k8nbj"]
+[ext_resource type="Script" path="res://components/destroyed_component.gd" id="9_oxlii"]
+[ext_resource type="Script" path="res://components/score_component.gd" id="10_26ih3"]
+[ext_resource type="AudioStream" uid="uid://2m7p0gr5l7xr" path="res://sounds/hit_sound.wav" id="11_j7jjc"]
+[ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="12_djrls"]
+[ext_resource type="Resource" uid="uid://bhyol76hy8g15" path="res://game_stats.tres" id="12_wiuhh"]
 
 [node name="Brick" type="RigidBody2D"]
+collision_layer = 64
+collision_mask = 8
+gravity_scale = 0.0
 script = ExtResource("1_ksjbf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ioqc1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_vndaf")
+
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component", "hurtbox_component")]
+script = ExtResource("3_qcgmy")
+stats_component = NodePath("../StatsComponent")
+hurtbox_component = NodePath("../HurtboxComponent")
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("4_4nwio")
+health = 3
+
+[node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("6_veu71")
+sprite = NodePath("../AnimatedSprite2D")
+
+[node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
+script = ExtResource("7_38jxa")
+node = NodePath("../AnimatedSprite2D")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("8_cudlo")
+scene = ExtResource("9_k8nbj")
+
+[node name="DestroyedComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "stats_component", "destroy_effect_spawner_component")]
+script = ExtResource("9_oxlii")
+actor = NodePath("..")
+stats_component = NodePath("../StatsComponent")
+destroy_effect_spawner_component = NodePath("../SpawnerComponent")
+
+[node name="ScoreComponent" type="Node" parent="."]
+script = ExtResource("10_26ih3")
+game_stats = ExtResource("12_wiuhh")
+
+[node name="VariablePitchAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_j7jjc")
+volume_db = -5.0
+bus = &"Sounds"
+script = ExtResource("12_djrls")

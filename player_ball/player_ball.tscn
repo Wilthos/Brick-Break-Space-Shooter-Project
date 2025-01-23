@@ -52,7 +52,7 @@ radius = 4.0
 
 [node name="PlayerBall" type="CharacterBody2D"]
 collision_layer = 8
-collision_mask = 16
+collision_mask = 80
 script = ExtResource("1_uyugo")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
@@ -92,7 +92,7 @@ move_component = NodePath("../MoveComponent")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 32
 script = ExtResource("11_6iafi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]

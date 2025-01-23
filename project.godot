@@ -43,6 +43,8 @@ Fire={
 2d_physics/layer_3="playerball_hurtbox"
 2d_physics/layer_4="playerball_main"
 2d_physics/layer_5="playerpaddle_main"
+2d_physics/layer_6="brick_hurtbox"
+2d_physics/layer_7="brick_main"
 
 [rendering]
 

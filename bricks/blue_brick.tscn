@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5uev8sljra78"]
+
+[ext_resource type="PackedScene" uid="uid://dxiaq4p5nmrcd" path="res://bricks/brick.tscn" id="1_54rut"]
+[ext_resource type="Texture2D" uid="uid://cqjksmmko6vp0" path="res://assets/Bricks/Blue/blue_brick_max.png" id="2_6cx2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu5jo"]
+size = Vector2(23.1423, 10.6229)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5d2xk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6cx2i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueux1"]
+size = Vector2(31.6994, 15.1775)
+
+[node name="BlueBrick" instance=ExtResource("1_54rut")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.0427699, 0.321397)
+shape = SubResource("RectangleShape2D_mu5jo")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0.0526412, 0.342178)
+scale = Vector2(0.743367, 0.757844)
+sprite_frames = SubResource("SpriteFrames_5d2xk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+position = Vector2(0.0580235, 0.347831)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_ueux1")
