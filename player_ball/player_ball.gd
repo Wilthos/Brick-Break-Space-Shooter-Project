@@ -40,15 +40,15 @@ func _physics_process(delta):
 
 	#if (collider is Brick):
 	if (collider is Brick or collider is PlayerPaddle):
-		print_debug("Velocity Before: ", move_component.velocity)
+		#print_debug("Velocity Before: ", move_component.velocity)
 		ball_collision(collider)
-		print_debug("Velocity After: ", move_component.velocity)
+		#print_debug("Velocity After: ", move_component.velocity)
 	else:
 		move_component.velocity = move_component.velocity.bounce(collision.get_normal())
 
 
 func ball_collision(collider):
-	print("Collider: ", collider)
+	#print_debug("Collider: ", collider)
 	#var ball_width = collision_shape_2d.shape.get_rect().size.x
 	var ball_center_x = global_position.x
 	var collider_width = collider.get_width()
@@ -56,17 +56,17 @@ func ball_collision(collider):
 	
 	var velocity_xy = move_component.velocity.length()
 	
-	print_debug("velocity_xy: ",velocity_xy)
-	print_debug("collider_width: ",collider_width)
-	print_debug("collider_center_x: ", collider_center_x)
-	print_debug("ball_center_x: ", ball_center_x)
+	#print_debug("velocity_xy: ",velocity_xy)
+	#print_debug("collider_width: ",collider_width)
+	#print_debug("collider_center_x: ", collider_center_x)
+	#print_debug("ball_center_x: ", ball_center_x)
 
 #	 // Calculate the position of the ball relative to the center of
 #	// the paddle, and express this as a number between -1 and +1.
 #	// (Note: collisions at the ends of the paddle may exceed this
 #	// range, but that is fine.)
 	var collision_x = ((ball_center_x - (collider_center_x)) / (collider_width / 2))
-	print_debug("collision_x: ", collision_x)
+	#print_debug("collision_x: ", collision_x)
 	
 	var new_velocity = Vector2(0,0)
 	
