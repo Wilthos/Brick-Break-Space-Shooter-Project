@@ -124,11 +124,11 @@ script = ExtResource("1_eocui")
 [node name="Anchor" type="Node2D" parent="."]
 
 [node name="PlayerPaddle" parent="Anchor" instance=ExtResource("18_yl1cc")]
-position = Vector2(0, -10)
+position = Vector2(0, -11)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor"]
 sprite_frames = SubResource("SpriteFrames_8kb2e")
-animation = &"center"
+animation = &"bank_left"
 autoplay = "center"
 
 [node name="FlameAnimatedSprite" type="AnimatedSprite2D" parent="Anchor"]

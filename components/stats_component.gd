@@ -3,7 +3,7 @@ class_name StatsComponent
 extends Node
 
 # Create the health variable and connect a setter
-@export var health: int = 1:
+@export var health: float = 1:
 	set(value):
 		health = value
 		

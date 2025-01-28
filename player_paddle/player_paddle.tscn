@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bqca3kev2jp8c" path="res://assets/Brick_Breaker_Assets/gray_paddle.png" id="1_fcb1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kn7xc"]
-size = Vector2(20, 6)
+size = Vector2(24.712, 6)
 
 [node name="PlayerPaddle" type="CharacterBody2D"]
 collision_layer = 16
@@ -12,9 +12,10 @@ collision_mask = 8
 script = ExtResource("1_cglaa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4.76837e-07, -2.58287e-07)
-scale = Vector2(0.625, 0.666667)
+position = Vector2(-0.159097, 0)
+scale = Vector2(0.772117, 0.6611)
 texture = ExtResource("1_fcb1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.164715, 0)
 shape = SubResource("RectangleShape2D_kn7xc")

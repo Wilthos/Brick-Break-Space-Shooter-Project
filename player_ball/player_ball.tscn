@@ -72,7 +72,7 @@ frame_progress = 0.183739
 
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("8_dap8g")
-health = 3
+health = 3.0
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("9_61d6u")

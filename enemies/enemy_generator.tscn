@@ -18,13 +18,13 @@ game_stats = ExtResource("5_n1ihn")
 script = ExtResource("2_h172f")
 
 [node name="GreenEnemySpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 autostart = true
 
 [node name="YellowEnemySpawnTimer" type="Timer" parent="."]
 process_mode = 4
-wait_time = 5.0
+wait_time = 6.0
 one_shot = true
 autostart = true
 

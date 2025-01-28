@@ -36,7 +36,7 @@ hurtbox_component = NodePath("../HurtboxComponent")
 
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("4_4nwio")
-health = 3
+health = 3.0
 
 [node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("6_veu71")

@@ -18,14 +18,14 @@ var screen_width = ProjectSettings.get_setting("display/window/size/viewport_wid
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	green_enemy_spawn_timer.timeout.connect(handle_spawn.bind(GreenEnemyScene,green_enemy_spawn_timer))
-	yellow_enemy_spawn_timer.timeout.connect(handle_spawn.bind(YellowEnemyScene,yellow_enemy_spawn_timer,5.0))
-	pink_enemy_spawn_timer.timeout.connect(handle_spawn.bind(PinkEnemyScene,pink_enemy_spawn_timer,10.0))
+	#green_enemy_spawn_timer.timeout.connect(handle_spawn.bind(GreenEnemyScene,green_enemy_spawn_timer))
+	#yellow_enemy_spawn_timer.timeout.connect(handle_spawn.bind(YellowEnemyScene,yellow_enemy_spawn_timer,5.0))
+	#pink_enemy_spawn_timer.timeout.connect(handle_spawn.bind(PinkEnemyScene,pink_enemy_spawn_timer,10.0))
 	
 	game_stats.score_changed.connect(func(new_score: int):
-		if new_score > 10:
+		if new_score > 100:
 			yellow_enemy_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
-		if new_score > 50:
+		if new_score > 500:
 			pink_enemy_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 		)
 	

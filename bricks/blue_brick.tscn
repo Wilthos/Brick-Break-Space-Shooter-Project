@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5uev8sljra78"]
+[gd_scene load_steps=9 format=3 uid="uid://b5uev8sljra78"]
 
 [ext_resource type="PackedScene" uid="uid://dxiaq4p5nmrcd" path="res://bricks/brick.tscn" id="1_54rut"]
 [ext_resource type="Texture2D" uid="uid://cqjksmmko6vp0" path="res://assets/Bricks/Blue/blue_brick_max.png" id="2_6cx2i"]
+[ext_resource type="Script" path="res://bricks/blue_brick.gd" id="2_roxg2"]
+[ext_resource type="Texture2D" uid="uid://lhpfn2jyugka" path="res://assets/Bricks/Blue/blue_brick_half.png" id="4_t57sl"]
+[ext_resource type="Texture2D" uid="uid://d3fxb6rty70gn" path="res://assets/Bricks/Blue/blue_brick_min.png" id="5_yk8k5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu5jo"]
 size = Vector2(23.1423, 10.6229)
@@ -10,10 +13,26 @@ size = Vector2(23.1423, 10.6229)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_t57sl")
+}],
+"loop": false,
+"name": &"half",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_6cx2i")
 }],
 "loop": false,
-"name": &"default",
+"name": &"max",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yk8k5")
+}],
+"loop": true,
+"name": &"min",
 "speed": 5.0
 }]
 
@@ -21,6 +40,7 @@ animations = [{
 size = Vector2(31.6994, 15.1775)
 
 [node name="BlueBrick" instance=ExtResource("1_54rut")]
+script = ExtResource("2_roxg2")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0.0427699, 0.321397)
@@ -30,6 +50,8 @@ shape = SubResource("RectangleShape2D_mu5jo")
 position = Vector2(0.0526412, 0.342178)
 scale = Vector2(0.743367, 0.757844)
 sprite_frames = SubResource("SpriteFrames_5d2xk")
+animation = &"max"
+autoplay = "max"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
 position = Vector2(0.0580235, 0.347831)
