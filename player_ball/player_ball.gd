@@ -76,9 +76,9 @@ func ball_collision(collider):
 	new_velocity.x = velocity_xy * collision_x 
 
 	if collider.get_rid() == last_collider_id && collider is Brick:
-		print_debug(new_velocity.x)
+		#print_debug(new_velocity.x)
 		new_velocity.x = new_velocity.rotated(randf_range(-45, 45)).x * 10
-		print_debug(new_velocity.x)
+		#print_debug(new_velocity.x)
 	else:
 		last_collider_id = collider.get_rid()
 	
@@ -91,7 +91,7 @@ func ball_collision(collider):
 	#print_debug(velocity_xy)
 	#print_debug(new_velocity.x)
 	new_velocity.y = sqrt(absf(velocity_xy*velocity_xy - new_velocity.x * new_velocity.x)) * (-1 if move_component.velocity.y > 0 else 1)
-	print_debug("new_velocity.y: ",new_velocity.y)
+	#print_debug("new_velocity.y: ",new_velocity.y)
 	#var speed_multiplier = speed_up_factor if collider is Paddle else 1
 	move_component.velocity = (new_velocity *  speed_multiplier).limit_length(VELOCITY_LIMIT)
 	#print(velocity)

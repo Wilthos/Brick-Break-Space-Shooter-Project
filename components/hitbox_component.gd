@@ -2,6 +2,8 @@
 class_name HitboxComponent
 extends Area2D
 
+@onready var hitbox_component: HitboxComponent = $"."
+
 # Export the damage amount this hitbox deals
 @export var damage = 1.0
 
@@ -13,6 +15,10 @@ func _ready():
 	area_entered.connect(_on_hurtbox_entered)
 
 func _on_hurtbox_entered(hurtbox: HurtboxComponent):
+	# For debug
+	#print_debug("Hitbox Info: ",hitbox_component)
+	#print_debug("Hurtbox Info: ",hurtbox)
+	#print_debug("Area Overlap info: ",overlaps_body())
 	# Make sure the area we are overlapping is a hurtbox
 	if not hurtbox is HurtboxComponent: return
 	# Make sure the hurtbox isn't invincible
