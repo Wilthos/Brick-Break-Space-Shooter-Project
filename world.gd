@@ -12,7 +12,7 @@ func _ready() -> void:
 	randomize()
 	player_ball.position = Vector2(80,200)
 	#player_ball.position = Vector2(40,200)
-	#player_ball.move_component.velocity = Vector2(0,50)
+	#player_ball.move_component.velocity = Vector2(0,0)
 	player_ball.move_component.velocity = Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized() * ball_speed
 	update_score_label(game_stats.score)
 	game_stats.score_changed.connect(update_score_label)

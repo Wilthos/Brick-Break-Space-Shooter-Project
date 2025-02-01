@@ -1,3 +1,4 @@
+class_name Laser
 extends Node2D
 
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
@@ -12,3 +13,7 @@ func _ready() -> void:
 	flash_component.flash()
 	hitbox_component.hit_hurtbox.connect(queue_free.unbind(1))
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
+	# Trying to make laser disolve on brick and not do damage
+	#print_debug("Area Overlap info: ",hitbox_component.get_parent())
+	#if hitbox_component.overlaps_body(Brick) == true:
+		#print_debug("Hit Brick!")
