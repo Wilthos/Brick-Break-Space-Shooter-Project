@@ -27,6 +27,12 @@ func _ready() -> void:
 		await get_tree().create_timer(1.0).timeout # Quick code for a timer
 		get_tree().change_scene_to_file("res://menus/game_over.tscn")
 	)
+	
+	# Get the number of EnemyPortals in the level and store that number
+	var enemy_portal_total = get_children().filter(func(n):
+		return n is EnemyPortal).size()
+	print_debug(enemy_portal_total)
+	
 
 func update_score_label(new_score: int) -> void:
 	score_label.text = "Score: " + str(new_score)

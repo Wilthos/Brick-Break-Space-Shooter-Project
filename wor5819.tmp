@@ -16,6 +16,7 @@ size = Vector2(160, 22)
 [node name="World" type="Node2D"]
 script = ExtResource("1_y13p3")
 game_stats = ExtResource("2_nkat3")
+ball_speed = null
 
 [node name="Ship" parent="." instance=ExtResource("1_u6n25")]
 position = Vector2(80, 224)
@@ -23,13 +24,7 @@ position = Vector2(80, 224)
 [node name="SpaceBackground" parent="." instance=ExtResource("2_wswaa")]
 
 [node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(80, 114)
-
-[node name="EnemyPortal2" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(56, 114)
-
-[node name="EnemyPortal3" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(104, 114)
+position = Vector2(80, 72)
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 160.0
