@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://v5cn2kwbnj5v"]
+[gd_scene load_steps=36 format=3 uid="uid://v5cn2kwbnj5v"]
 
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="1_5uqmi"]
 [ext_resource type="Script" path="res://enemies/enemy_portal.gd" id="1_lpwq5"]
@@ -16,6 +16,9 @@
 [ext_resource type="Script" path="res://components/score_component.gd" id="14_mhts2"]
 [ext_resource type="PackedScene" uid="uid://cws51pvav0gk8" path="res://effects/explosion_effect.tscn" id="15_xvihv"]
 [ext_resource type="Script" path="res://components/destroyed_component.gd" id="16_3cdnr"]
+[ext_resource type="AudioStream" uid="uid://2m7p0gr5l7xr" path="res://sounds/hit_sound.wav" id="17_sd111"]
+[ext_resource type="Script" path="res://components/portal_count_component.gd" id="18_qeblw"]
+[ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="18_xexhp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odj88"]
 atlas = ExtResource("6_04vw0")
@@ -145,7 +148,7 @@ position = Vector2(-2.38419e-07, -3.57628e-07)
 scale = Vector2(0.375, 0.375)
 sprite_frames = SubResource("SpriteFrames_hojr3")
 autoplay = "default"
-frame_progress = 0.862617
+frame_progress = 0.791521
 
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("1_5uqmi")
@@ -192,10 +195,6 @@ sprite = NodePath("../Anchor/Sprite2D")
 script = ExtResource("12_m4c5m")
 node = NodePath("../Anchor")
 
-[node name="ScoreComponent" type="Node" parent="."]
-script = ExtResource("14_mhts2")
-game_stats = ExtResource("5_vs84a")
-
 [node name="ExplosionSpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("1_5uqmi")
 scene = ExtResource("15_xvihv")
@@ -205,3 +204,18 @@ script = ExtResource("16_3cdnr")
 actor = NodePath("..")
 stats_component = NodePath("../StatsComponent")
 destroy_effect_spawner_component = NodePath("../ExplosionSpawnerComponent")
+
+[node name="VariablePitchAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_sd111")
+volume_db = -5.0
+bus = &"Sounds"
+script = ExtResource("18_xexhp")
+
+[node name="PortalCountsComponent" type="Node" parent="."]
+script = ExtResource("18_qeblw")
+game_stats = ExtResource("5_vs84a")
+
+[node name="ScoreComponent" type="Node" parent="."]
+script = ExtResource("14_mhts2")
+game_stats = ExtResource("5_vs84a")
+adjust_amount = 100

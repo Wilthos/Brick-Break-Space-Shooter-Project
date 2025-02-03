@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 		
 
 func get_size():
-	print(collision_shape_2d.shape.get_rect().size)
+	#print(collision_shape_2d.shape.get_rect().size)
 	return collision_shape_2d.shape.get_rect().size
 	
 func get_width():

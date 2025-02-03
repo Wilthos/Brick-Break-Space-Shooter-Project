@@ -21,6 +21,8 @@ var screen_width = ProjectSettings.get_setting("display/window/size/viewport_wid
 @onready var scale_component: ScaleComponent = $ScaleComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 @onready var score_component: ScoreComponent = $ScoreComponent
+@onready var variable_pitch_audio_stream_player: VariablePitchAudioStreamPlayer = $VariablePitchAudioStreamPlayer
+@onready var portal_counts_component: PortalCountsComponent = $PortalCountsComponent
 
 
 
@@ -39,6 +41,7 @@ func _ready() -> void:
 		
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()
+		portal_counts_component.adjust_portal_count()
 		)
 		
 	
@@ -47,7 +50,7 @@ func _ready() -> void:
 		#scale_component.tween_scale()
 		flash_component.flash()
 		shake_component.tween_shake()
-		#variable_pitch_audio_stream_player.play_with_variance()
+		variable_pitch_audio_stream_player.play_with_variance()
 		#print("Green Enemy Health: ", stats_component.health)
 	)
 	stats_component.no_health.connect(queue_free)
