@@ -23,7 +23,7 @@ position = Vector2(80, 224)
 [node name="SpaceBackground" parent="." instance=ExtResource("2_wswaa")]
 
 [node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(80, 72)
+position = Vector2(80, 66)
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 160.0
@@ -46,25 +46,25 @@ position = Vector2(80, 251)
 shape = SubResource("RectangleShape2D_uqhio")
 
 [node name="BlueBrick" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(32, 80)
+position = Vector2(32, 74)
 
 [node name="BlueBrick2" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(92, 95)
+position = Vector2(92, 89)
 
 [node name="BlueBrick3" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(68, 95)
+position = Vector2(68, 89)
 
 [node name="BlueBrick4" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(56, 80)
+position = Vector2(56, 74)
 
 [node name="BlueBrick5" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(104, 80)
+position = Vector2(104, 74)
 
 [node name="BlueBrick6" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(128, 80)
+position = Vector2(128, 74)
 
 [node name="BlueBrick7" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(147, 66)
+position = Vector2(147, 60)
 
 [node name="BlueBrick8" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(13, 66)
+position = Vector2(13, 60)
