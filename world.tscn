@@ -23,7 +23,7 @@ position = Vector2(80, 224)
 [node name="SpaceBackground" parent="." instance=ExtResource("2_wswaa")]
 
 [node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(80, 66)
+position = Vector2(80, 106)
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 160.0
