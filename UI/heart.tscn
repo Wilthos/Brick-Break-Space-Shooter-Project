@@ -1,22 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://stikcw2yrqse"]
+[gd_scene load_steps=3 format=3 uid="uid://stikcw2yrqse"]
 
-[ext_resource type="Texture2D" uid="uid://clt2oefslow20" path="res://assets/Hearts/PNG/basic/background.png" id="1_ney08"]
-[ext_resource type="Texture2D" uid="uid://dg1ftc6jse5nf" path="res://assets/Hearts/PNG/basic/border.png" id="2_o2ij6"]
-[ext_resource type="Texture2D" uid="uid://b4ogllo7pt8n0" path="res://assets/Hearts/PNG/basic/heart.png" id="3_p56vs"]
+[ext_resource type="Script" path="res://UI/heart.gd" id="1_v40ai"]
+[ext_resource type="Texture2D" uid="uid://cw5ax2y1e4pcl" path="res://assets/Hearts/PNG/animated/border/heart_animated_1.png" id="2_mkmxi"]
 
 [node name="Heart" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 17.0
-offset_bottom = 17.0
+custom_minimum_size = Vector2(13, 13)
+offset_right = 13.0
+offset_bottom = 13.0
+script = ExtResource("1_v40ai")
 
-[node name="HeartBG" type="Sprite2D" parent="."]
-texture = ExtResource("1_ney08")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_mkmxi")
 centered = false
-
-[node name="HeartBorder" type="Sprite2D" parent="."]
-texture = ExtResource("2_o2ij6")
-centered = false
-
-[node name="HeartFill" type="Sprite2D" parent="."]
-texture = ExtResource("3_p56vs")
-centered = false
+hframes = 5

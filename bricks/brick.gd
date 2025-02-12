@@ -19,7 +19,7 @@ func _ready() -> void:
 	# Get Max Health of the Brick and store for brick status textures
 	#print_debug(max_brick_health_flag)
 	#print_debug(max_brick_health)
-	if stats_component:
+	if max_brick_health_flag:
 		max_brick_health = stats_component.health
 		max_brick_health_flag = false
 		# this should only run once

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kv1ad4msgxqs"]
+[gd_scene load_steps=15 format=3 uid="uid://kv1ad4msgxqs"]
 
 [ext_resource type="PackedScene" uid="uid://buhk4f2lxlx3u" path="res://player_ship/ship.tscn" id="1_u6n25"]
 [ext_resource type="Script" path="res://world.gd" id="1_y13p3"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bhdbcqhia7siy" path="res://player_ball/player_ball.tscn" id="7_umxke"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="8_wcmc4"]
 [ext_resource type="PackedScene" uid="uid://b5uev8sljra78" path="res://bricks/blue_brick.tscn" id="9_3bhrl"]
+[ext_resource type="PackedScene" uid="uid://dh8frerdxeqf1" path="res://UI/ball_health.tscn" id="10_2ssh3"]
+[ext_resource type="Texture2D" uid="uid://bjcdrlgb6jrc6" path="res://assets/health_bar/healthbarUnder.png" id="12_fhft7"]
+[ext_resource type="Texture2D" uid="uid://b4d15sd23x313" path="res://assets/health_bar/healthbarProgress.png" id="13_yab43"]
+[ext_resource type="Script" path="res://UI/texture_progress_bar.gd" id="14_jd2y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqhio"]
 size = Vector2(160, 22)
@@ -21,9 +25,6 @@ game_stats = ExtResource("2_nkat3")
 position = Vector2(80, 224)
 
 [node name="SpaceBackground" parent="." instance=ExtResource("2_wswaa")]
-
-[node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(80, 106)
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 160.0
@@ -45,26 +46,58 @@ script = ExtResource("8_wcmc4")
 position = Vector2(80, 251)
 shape = SubResource("RectangleShape2D_uqhio")
 
+[node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
+position = Vector2(80, 90)
+
 [node name="BlueBrick" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(32, 74)
+position = Vector2(32, 98)
 
 [node name="BlueBrick2" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(92, 89)
+position = Vector2(92, 113)
 
 [node name="BlueBrick3" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(68, 89)
+position = Vector2(68, 113)
 
 [node name="BlueBrick4" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(56, 74)
+position = Vector2(56, 98)
 
 [node name="BlueBrick5" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(104, 74)
+position = Vector2(104, 98)
 
 [node name="BlueBrick6" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(128, 74)
+position = Vector2(128, 98)
 
 [node name="BlueBrick7" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(147, 60)
+position = Vector2(147, 84)
 
 [node name="BlueBrick8" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(13, 60)
+position = Vector2(13, 84)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BallHealth" parent="CanvasLayer" instance=ExtResource("10_2ssh3")]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 27.0
+grow_horizontal = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("ship")]
+custom_minimum_size = Vector2(64, 10)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_top = 3.0
+offset_right = 9.0
+offset_bottom = 13.0
+grow_horizontal = 0
+scale = Vector2(0.8, 0.8)
+texture_under = ExtResource("12_fhft7")
+texture_progress = ExtResource("13_yab43")
+script = ExtResource("14_jd2y1")
+ship = NodePath("../../Ship")

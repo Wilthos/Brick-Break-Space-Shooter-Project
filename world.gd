@@ -3,12 +3,17 @@ extends Node2D
 @export var game_stats: GameStats
 @export var ball_speed = 50 
 
-@onready var ship: Node2D = $Ship
+@onready var ship: Ship = $Ship
 @onready var score_label: Label = $ScoreLabel
 @onready var player_ball: PlayerBall = $PlayerBall
+@onready var ball_health: BallHealth = $CanvasLayer/BallHealth
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Display the Player Ball's Health
+	ball_health.set_max_hearts(player_ball.stats_component.health)
+	ball_health.update_hearts(player_ball.stats_component.health)
+	#ball_health.update_hearts(2)
 	randomize()
 	player_ball.position = Vector2(80,200)
 	#player_ball.position = Vector2(40,200)
@@ -31,9 +36,13 @@ func _ready() -> void:
 	game_stats.no_more_portals.connect(func():
 		await get_tree().create_timer(1.0).timeout # Quick code for a timer
 		get_tree().change_scene_to_file("res://menus/game_over.tscn")
-	
-		
 	)
+	
+	# Update the Ball Health GUI when the ball's health is chaged
+	player_ball.stats_component.health_changed.connect(func():
+		#print_debug(player_ball.stats_component.health)
+		ball_health.update_hearts(player_ball.stats_component.health)
+		)
 	
 	# Get the number of EnemyPortals in the level and store that number
 	var enemy_portal_total = get_children().filter(func(n):

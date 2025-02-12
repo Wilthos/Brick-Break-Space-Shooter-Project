@@ -1,3 +1,4 @@
+class_name Ship
 extends Node2D
 
 @onready var left_muzzle: Marker2D = $LeftMuzzle
@@ -9,12 +10,17 @@ extends Node2D
 @onready var move_component: MoveComponent = $MoveComponent
 @onready var flame_animated_sprite: AnimatedSprite2D = %FlameAnimatedSprite
 @onready var variable_pitch_audio_stream_player: VariablePitchAudioStreamPlayer = $VariablePitchAudioStreamPlayer
+@onready var stats_component: StatsComponent = $StatsComponent
 
+var max_ship_health_flag = true
+var max_ship_health = 0 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#fire_rate_timer.timeout.connect(fire_lasers)
-	
+	if max_ship_health_flag:
+		max_ship_health = stats_component.health
+		max_ship_health_flag = false
 	pass
 	
 
