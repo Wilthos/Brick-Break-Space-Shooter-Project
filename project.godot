@@ -46,6 +46,7 @@ Fire={
 2d_physics/layer_6="brick_hurtbox"
 2d_physics/layer_7="brick_main"
 2d_physics/layer_8="portal_hurtbox"
+2d_physics/layer_9="portal_main"
 
 [rendering]
 

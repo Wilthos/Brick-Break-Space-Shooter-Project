@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "9fd92c59f15bf447",
+    "type": "split",
+    "children": [
+      {
+        "id": "ff6500b04a7eefa8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "302323d4bdfc6797",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Get Wrecked/ToDos/Overview.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Overview"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "53875364156adcf7",
+    "type": "split",
+    "children": [
+      {
+        "id": "5184dc718543a511",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3fbf71b58b51fcc5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ef3014b98f9add3c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2688523517845b15",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "116b074013b082ad",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae6fbf977312183c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eee47bd0ff9b1be2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Get Wrecked/ToDos/Overview.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Overview"
+            }
+          },
+          {
+            "id": "d3a5fdaeaa7ab748",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Get Wrecked/ToDos/Overview.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Overview"
+            }
+          },
+          {
+            "id": "11bdb6288b0231e9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "af39d3dc8a7c3c96",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Get Wrecked/ToDos/Overview.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Overview"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "302323d4bdfc6797",
+  "lastOpenFiles": [
+    "Get Wrecked/ToDos/ToDos.md",
+    "Get Wrecked/ToDos/Overview.md",
+    "Get Wrecked/Combo System.md",
+    "Get Wrecked/ToDos",
+    "create a link.md",
+    "Welcome.md",
+    "().md",
+    "Get Wrecked"
+  ]
+}

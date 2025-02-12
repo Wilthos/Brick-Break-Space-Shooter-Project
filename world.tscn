@@ -47,7 +47,7 @@ position = Vector2(80, 251)
 shape = SubResource("RectangleShape2D_uqhio")
 
 [node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(80, 90)
+position = Vector2(80, 89)
 
 [node name="BlueBrick" parent="." instance=ExtResource("9_3bhrl")]
 position = Vector2(32, 98)

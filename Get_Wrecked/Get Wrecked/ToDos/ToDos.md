@@ -1,0 +1,13 @@
+- Link the enemy spawn rate to the number of spawners on screen?
+- Keep track of level stats and build ranking system
+	- Number of enemies killed (help)
+	- Number of enemies getting past you on screen (hurt)
+	- Time taken to beat level (help the quicker)
+	- Damage Taken (hurt)
+	- Accuracy? (Hits/shots fired)
+- Work on a [[Combo System]] for Killing aliens
+	- Maybe get upgrade to laser if you do that?
+- ~~Ball bounce off spawner but not damage it.~~
+- Have numerical damage done momentarily flash above enemy and player when damage done
+- Ball upgrade where it periodically bursts and hurts non-brick enemies
+- 
