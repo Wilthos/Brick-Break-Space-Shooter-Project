@@ -68,10 +68,18 @@ position = Vector2(104, 98)
 position = Vector2(128, 98)
 
 [node name="BlueBrick7" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(147, 84)
+position = Vector2(140, 49)
 
 [node name="BlueBrick8" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(13, 84)
+position = Vector2(20, 49)
+
+[node name="BlueBrick9" parent="." instance=ExtResource("9_3bhrl")]
+position = Vector2(52, 64)
+rotation = -0.785398
+
+[node name="BlueBrick10" parent="." instance=ExtResource("9_3bhrl")]
+position = Vector2(104, 64)
+rotation = 0.785398
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

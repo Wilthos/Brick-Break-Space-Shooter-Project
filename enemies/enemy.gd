@@ -1,6 +1,8 @@
 class_name Enemy
 extends Node2D
 
+@export var game_stats: GameStats
+
 @onready var stats_component: StatsComponent = $StatsComponent
 @onready var move_component: MoveComponent = $MoveComponent
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
@@ -16,6 +18,18 @@ extends Node2D
 func _ready() -> void:
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()
+		game_stats.enemy_destroyed_count += 1
+		game_stats.combo_count += 1
+		#print_debug("Enemies Destroyed:", game_stats.enemy_destroyed_count)
+		#print_debug("Combo Count: ",game_stats.combo_count)
+		)
+	
+	# Keep track of how many enemies get passed the player
+	visible_on_screen_notifier_2d.screen_exited.connect(func():
+		game_stats.enemy_passed_count += 1
+		game_stats.combo_count = 0
+		#print_debug("Enemies Passed:", game_stats.enemy_passed_count)
+		#print_debug("Combo Broken!")
 		)
 		
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)

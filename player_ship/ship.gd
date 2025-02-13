@@ -15,13 +15,14 @@ extends Node2D
 var max_ship_health_flag = true
 var max_ship_health = 0 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#fire_rate_timer.timeout.connect(fire_lasers)
 	if max_ship_health_flag:
 		max_ship_health = stats_component.health
 		max_ship_health_flag = false
-	pass
+	
 	
 
 func fire_lasers() -> void:

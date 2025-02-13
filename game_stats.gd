@@ -15,5 +15,18 @@ extends Resource
 		if portal_count == 0:
 			no_more_portals.emit()
 
+@export var enemy_passed_count: int = 0 :
+	set(value):
+		enemy_passed_count = value
+		
+		
+@export var enemy_destroyed_count: int = 0 :
+	set(value):
+		enemy_destroyed_count = value
+
+@export var combo_count: int = 0 :
+	set(value):
+		combo_count = value
+
 signal score_changed(new_score)
 signal no_more_portals()
