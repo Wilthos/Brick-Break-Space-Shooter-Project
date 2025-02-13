@@ -27,6 +27,8 @@ extends Resource
 @export var combo_count: int = 0 :
 	set(value):
 		combo_count = value
+		
+@export var maxcombo: int = 0
 
 signal score_changed(new_score)
 signal no_more_portals()

@@ -1,6 +1,8 @@
 class_name Ship
 extends Node2D
 
+@export var game_stats: GameStats
+
 @onready var left_muzzle: Marker2D = $LeftMuzzle
 @onready var right_muzzle: Marker2D = $RightMuzzle
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent
@@ -33,18 +35,28 @@ func fire_lasers() -> void:
 
 func _process(delta: float) -> void:
 	animate_the_ship()
+	
+	# This chunk of code will have the lasers 
+	# fire when the button is pressed 
+	# and auto fire at a predetermiend rate
+	# When held
+	#if Input.is_action_just_pressed("Fire"):
+		#fire_lasers()
+		#fire_rate_timer.start()
+		#if Input.is_action_pressed("Fire"):
+			#fire_rate_timer.timeout.connect(fire_lasers)
+	#if Input.is_action_just_released("Fire"):
+		#fire_rate_timer.stop()
+		
+	# This chunk of code will have the lasers only start
+	# once the firebutton is pressed, and then fire at a certain
+	# rate
 	if Input.is_action_just_pressed("Fire"):
 		fire_lasers()
 		fire_rate_timer.start()
-		if Input.is_action_pressed("Fire"):
-			fire_rate_timer.timeout.connect(fire_lasers)
-	if Input.is_action_just_released("Fire"):
-		fire_rate_timer.stop()
-		#if fire_rate_timer.is_stopped():
-			#fire_lasers()
-			#fire_rate_timer.start()
-		
-		
+	
+	fire_rate_timer.wait_time = 0.2 / (0.5 + (game_stats.maxcombo*5 * 0.01))
+	fire_rate_timer.timeout.connect(fire_lasers)
 	
 	
 func animate_the_ship() -> void:

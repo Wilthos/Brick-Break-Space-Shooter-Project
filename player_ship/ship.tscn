@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://buhk4f2lxlx3u"]
+[gd_scene load_steps=31 format=3 uid="uid://buhk4f2lxlx3u"]
 
 [ext_resource type="Texture2D" uid="uid://c45jqgt0qw53h" path="res://assets/ship.png" id="1_1rwxh"]
 [ext_resource type="Script" path="res://player_ship/ship.gd" id="1_eocui"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="2_i67j3"]
+[ext_resource type="Resource" uid="uid://bhyol76hy8g15" path="res://game_stats.tres" id="2_x6dn1"]
 [ext_resource type="Script" path="res://components/move_input_component.gd" id="3_mfqoy"]
 [ext_resource type="Resource" uid="uid://528eqp8kwt2j" path="res://player_ship/ship_move_stats.tres" id="4_dfug4"]
 [ext_resource type="Script" path="res://components/position_clamp_component.gd" id="5_jbmom"]
@@ -120,6 +121,7 @@ animations = [{
 
 [node name="Ship" type="Node2D"]
 script = ExtResource("1_eocui")
+game_stats = ExtResource("2_x6dn1")
 
 [node name="Anchor" type="Node2D" parent="."]
 

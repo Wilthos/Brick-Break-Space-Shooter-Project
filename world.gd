@@ -29,7 +29,7 @@ func _ready() -> void:
 	# Break the combo count when the ship is hit
 	ship.stats_component.health_decreased.connect(func():
 		game_stats.combo_count = 0
-		#print_debug("Ship Hit! Combo Broken")
+		print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
 		)
 	
 	# Game Over is the ship/player is destroyed
@@ -64,6 +64,7 @@ func _ready() -> void:
 	print_debug(enemy_portal_total)
 	# Set the number of enemy portals in the game stats
 	game_stats.portal_count = enemy_portal_total
+
 
 # Function to update the score label in the level GUI
 func update_score_label(new_score: int) -> void:

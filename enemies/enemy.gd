@@ -20,6 +20,8 @@ func _ready() -> void:
 		score_component.adjust_score()
 		game_stats.enemy_destroyed_count += 1
 		game_stats.combo_count += 1
+		# Store the max combo for the level
+		if game_stats.combo_count > game_stats.maxcombo: game_stats.maxcombo = game_stats.combo_count
 		#print_debug("Enemies Destroyed:", game_stats.enemy_destroyed_count)
 		#print_debug("Combo Count: ",game_stats.combo_count)
 		)
@@ -28,8 +30,8 @@ func _ready() -> void:
 	visible_on_screen_notifier_2d.screen_exited.connect(func():
 		game_stats.enemy_passed_count += 1
 		game_stats.combo_count = 0
-		#print_debug("Enemies Passed:", game_stats.enemy_passed_count)
-		#print_debug("Combo Broken!")
+		print_debug("Enemies Passed:", game_stats.enemy_passed_count)
+		print_debug("Combo Broken! Max Combo: ",game_stats.combo_count)
 		)
 		
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
