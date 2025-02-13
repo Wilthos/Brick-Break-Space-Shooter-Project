@@ -1,12 +1,17 @@
-- Link the enemy spawn rate to the number of spawners on screen?
+- Tweak enemy spawn rates
+	- Overall, we need to balance the rate of laser fire and the number of enemies that are spawned. We
+	- Ideas for Enemy Spawn Rates
+		- Link the enemy spawn rate to the number of spawners on screen?
+	- Ideas for Weapon Fire Rates
+		- Link Laser fire rate with max combo achieved.
+			- I think this will work well
 - Keep track of level stats and build ranking system
 	- Number of enemies killed (help)
 	- Number of enemies getting past you on screen (hurt)
 	- Time taken to beat level (help the quicker)
 	- Damage Taken (hurt)
 	- Accuracy? (Hits/shots fired)
-- Work on a [[Combo System]] for Killing aliens
-	- Maybe get upgrade to laser if you do that?
+- ~~Work on a Combo System for Killing aliens~~
 - ~~Ball bounce off spawner but not damage it.~~
 - Have numerical damage done momentarily flash above enemy and player when damage done
 - Ball upgrade where it periodically bursts and hurts non-brick enemies

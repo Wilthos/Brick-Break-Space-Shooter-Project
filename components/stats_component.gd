@@ -8,6 +8,7 @@ extends Node
 		# Signal out when health is decreased
 		if value < health: health_decreased.emit()
 		
+		# Set health value
 		health = value
 		
 		# Signal out that the health has changed

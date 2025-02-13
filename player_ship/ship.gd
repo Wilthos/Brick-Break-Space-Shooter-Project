@@ -13,10 +13,12 @@ extends Node2D
 @onready var flame_animated_sprite: AnimatedSprite2D = %FlameAnimatedSprite
 @onready var variable_pitch_audio_stream_player: VariablePitchAudioStreamPlayer = $VariablePitchAudioStreamPlayer
 @onready var stats_component: StatsComponent = $StatsComponent
+@onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
 var max_ship_health_flag = true
 var max_ship_health = 0 
 
+var total_damage_to_player_ship = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +27,11 @@ func _ready() -> void:
 		max_ship_health = stats_component.health
 		max_ship_health_flag = false
 	
-	
+	# keep track of how much damage the ship/player takes in a level
+	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
+		total_damage_to_player_ship += hitbox_component.damage
+		print_debug("Ship Hit! Total Damage: ", total_damage_to_player_ship)
+	)
 
 func fire_lasers() -> void:
 	variable_pitch_audio_stream_player.play_with_variance()
