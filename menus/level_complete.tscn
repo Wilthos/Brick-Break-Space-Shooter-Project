@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://x8hhfa6vp0nd"]
+
+[ext_resource type="Script" path="res://menus/game_over.gd" id="1_ow1gx"]
+[ext_resource type="Resource" uid="uid://bhyol76hy8g15" path="res://game_stats.tres" id="2_tglqb"]
+[ext_resource type="PackedScene" uid="uid://yiem2sysrjf2" path="res://effects/space_background.tscn" id="3_ro6dv"]
+[ext_resource type="LabelSettings" uid="uid://c4bk85cl0u4xl" path="res://fonts/title_label_settings.tres" id="4_lxsv5"]
+[ext_resource type="LabelSettings" uid="uid://dmtgl4wsvfd7y" path="res://fonts/default_label_settings.tres" id="5_05q2k"]
+
+[node name="LevelComplete" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ow1gx")
+game_stats = ExtResource("2_tglqb")
+
+[node name="SpaceBackground" parent="." instance=ExtResource("3_ro6dv")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="LevelCompleteLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level 
+Complete"
+label_settings = ExtResource("4_lxsv5")
+horizontal_alignment = 1
+
+[node name="ScoreHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score:"
+label_settings = ExtResource("5_05q2k")
+
+[node name="ScoreValue" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("5_05q2k")
+
+[node name="EnemiesDefeatedHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EnemiesDefeatedLabel" type="Label" parent="CenterContainer/VBoxContainer/EnemiesDefeatedHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enemies Defeated:"
+label_settings = ExtResource("5_05q2k")
+
+[node name="EnemiesDefeatedValue" type="Label" parent="CenterContainer/VBoxContainer/EnemiesDefeatedHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("5_05q2k")
+
+[node name="EnemiesPassedHBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EnemiesPassedLabel" type="Label" parent="CenterContainer/VBoxContainer/EnemiesPassedHBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enemies Escaped:"
+label_settings = ExtResource("5_05q2k")
+
+[node name="EnemiesPassedValue" type="Label" parent="CenterContainer/VBoxContainer/EnemiesPassedHBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("5_05q2k")
+
+[node name="DamageTakenHBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DamageTakenLabel" type="Label" parent="CenterContainer/VBoxContainer/DamageTakenHBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Damage Taken:"
+label_settings = ExtResource("5_05q2k")
+
+[node name="DamageTakenValue" type="Label" parent="CenterContainer/VBoxContainer/DamageTakenHBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("5_05q2k")
+
+[node name="VSpace" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="MenuLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Press 'SPACE' to Return 
+to Start Menu"
+label_settings = ExtResource("5_05q2k")
+horizontal_alignment = 1

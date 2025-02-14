@@ -30,5 +30,9 @@ extends Resource
 		
 @export var maxcombo: int = 0
 
+@export var damage_taken: int = 0 :
+	set(value):
+		damage_taken = value
+
 signal score_changed(new_score)
 signal no_more_portals()

@@ -18,7 +18,7 @@ extends Node2D
 var max_ship_health_flag = true
 var max_ship_health = 0 
 
-var total_damage_to_player_ship = 0
+var auto_fire_on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,8 +29,8 @@ func _ready() -> void:
 	
 	# keep track of how much damage the ship/player takes in a level
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
-		total_damage_to_player_ship += hitbox_component.damage
-		print_debug("Ship Hit! Total Damage: ", total_damage_to_player_ship)
+		game_stats.damage_taken += hitbox_component.damage
+		#print_debug("Ship Hit! Total Damage: ", game_stats.damage_taken)
 	)
 
 func fire_lasers() -> void:
@@ -57,11 +57,14 @@ func _process(delta: float) -> void:
 	# This chunk of code will have the lasers only start
 	# once the firebutton is pressed, and then fire at a certain
 	# rate
-	if Input.is_action_just_pressed("Fire"):
+	if Input.is_action_just_pressed("Fire") and !auto_fire_on:
 		fire_lasers()
 		fire_rate_timer.start()
+		auto_fire_on = true
 	
-	fire_rate_timer.wait_time = 0.2 / (0.5 + (game_stats.maxcombo*5 * 0.01))
+	#fire_rate_timer.wait_time = 0.2 / (0.5 + (game_stats.maxcombo*5 * 0.01))
+	fire_rate_timer.wait_time = 0.5 / (1.25 + (game_stats.maxcombo* 0.1))
+	
 	fire_rate_timer.timeout.connect(fire_lasers)
 	
 	

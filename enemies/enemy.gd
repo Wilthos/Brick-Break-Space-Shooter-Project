@@ -31,7 +31,7 @@ func _ready() -> void:
 		game_stats.enemy_passed_count += 1
 		game_stats.combo_count = 0
 		print_debug("Enemies Passed:", game_stats.enemy_passed_count)
-		print_debug("Combo Broken! Max Combo: ",game_stats.combo_count)
+		print_debug("Combo Broken! Max Combo: ",game_stats.maxcombo)
 		)
 		
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)

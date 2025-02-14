@@ -47,7 +47,7 @@ func _ready() -> void:
 	# Move to the next level if all portals are destroyed
 	game_stats.no_more_portals.connect(func():
 		await get_tree().create_timer(1.0).timeout # Quick code for a timer
-		get_tree().change_scene_to_file("res://menus/game_over.tscn")
+		get_tree().change_scene_to_file("res://menus/level_complete.tscn")
 	)
 	
 	# Update the Ball Health GUI when the ball's health is changed
