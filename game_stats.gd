@@ -27,6 +27,8 @@ extends Resource
 @export var combo_count: int = 0 :
 	set(value):
 		combo_count = value
+		combo_changed.emit(combo_count)
+		if combo_count >= 3: min_combo_reached.emit()
 		
 @export var maxcombo: int = 0
 
@@ -35,4 +37,6 @@ extends Resource
 		damage_taken = value
 
 signal score_changed(new_score)
+signal combo_changed(new_combo)
 signal no_more_portals()
+signal min_combo_reached()

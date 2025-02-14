@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://x8hhfa6vp0nd"]
 
-[ext_resource type="Script" path="res://menus/game_over.gd" id="1_ow1gx"]
+[ext_resource type="Script" path="res://menus/level_complete.gd" id="1_5g416"]
 [ext_resource type="Resource" uid="uid://bhyol76hy8g15" path="res://game_stats.tres" id="2_tglqb"]
 [ext_resource type="PackedScene" uid="uid://yiem2sysrjf2" path="res://effects/space_background.tscn" id="3_ro6dv"]
 [ext_resource type="LabelSettings" uid="uid://c4bk85cl0u4xl" path="res://fonts/title_label_settings.tres" id="4_lxsv5"]
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ow1gx")
+script = ExtResource("1_5g416")
 game_stats = ExtResource("2_tglqb")
 
 [node name="SpaceBackground" parent="." instance=ExtResource("3_ro6dv")]

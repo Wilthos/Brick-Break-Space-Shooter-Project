@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm5j2wmmhnkv1"]
+
+[ext_resource type="PackedScene" uid="uid://dxiaq4p5nmrcd" path="res://bricks/brick.tscn" id="1_kprv5"]
+[ext_resource type="Script" path="res://bricks/short_blue_brick.gd" id="2_pnimq"]
+[ext_resource type="Texture2D" uid="uid://d2yh5c1yfw4jq" path="res://assets/Bricks/Blue/short_blue_brick_half.png" id="3_lhs38"]
+[ext_resource type="Texture2D" uid="uid://be887gkqhyqg3" path="res://assets/Bricks/Blue/short_blue_brick_max.png" id="4_6hwob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4baqv"]
+size = Vector2(15.3159, 15.3159)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vcro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lhs38")
+}],
+"loop": false,
+"name": &"half",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6hwob")
+}],
+"loop": false,
+"name": &"max",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l225"]
+size = Vector2(16, 16)
+
+[node name="ShortBlueBrick" instance=ExtResource("1_kprv5")]
+script = ExtResource("2_pnimq")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.0190992, 0.0446844)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_4baqv")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8vcro")
+animation = &"max"
+autoplay = "max"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_7l225")
+
+[node name="StatsComponent" parent="." index="4"]
+health = 2.0

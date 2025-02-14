@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2fwfmkaelw7q"]
+
+[ext_resource type="PackedScene" uid="uid://dxiaq4p5nmrcd" path="res://bricks/brick.tscn" id="1_7utbk"]
+[ext_resource type="Script" path="res://bricks/thin_blue_brick.gd" id="2_8yeok"]
+[ext_resource type="Texture2D" uid="uid://3hhrfe377dfb" path="res://assets/Bricks/Blue/thin_blue_brick_half.png" id="3_rpr4l"]
+[ext_resource type="Texture2D" uid="uid://hccktyrnvrf2" path="res://assets/Bricks/Blue/thin_blue_brick_max.png" id="3_w0axh"]
+[ext_resource type="Texture2D" uid="uid://clevbvdrkxpiy" path="res://assets/Bricks/Blue/thin_blue_brick_min.png" id="5_ejwxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52khm"]
+size = Vector2(31.3917, 9.53517)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x081o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rpr4l")
+}],
+"loop": false,
+"name": &"half",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_w0axh")
+}],
+"loop": false,
+"name": &"max",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ejwxe")
+}],
+"loop": false,
+"name": &"min",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g7g8"]
+size = Vector2(32, 10)
+
+[node name="ThinBlueBrick" instance=ExtResource("1_7utbk")]
+script = ExtResource("2_8yeok")
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_52khm")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_x081o")
+animation = &"max"
+autoplay = "max"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_4g7g8")

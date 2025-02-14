@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://kv1ad4msgxqs"]
+[gd_scene load_steps=17 format=3 uid="uid://kv1ad4msgxqs"]
 
 [ext_resource type="PackedScene" uid="uid://buhk4f2lxlx3u" path="res://player_ship/ship.tscn" id="1_u6n25"]
 [ext_resource type="Script" path="res://world.gd" id="1_y13p3"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dh8frerdxeqf1" path="res://UI/ball_health.tscn" id="10_2ssh3"]
 [ext_resource type="Texture2D" uid="uid://bjcdrlgb6jrc6" path="res://assets/health_bar/healthbarUnder.png" id="12_fhft7"]
 [ext_resource type="Texture2D" uid="uid://b4d15sd23x313" path="res://assets/health_bar/healthbarProgress.png" id="13_yab43"]
+[ext_resource type="PackedScene" uid="uid://d2fwfmkaelw7q" path="res://bricks/thin_blue_brick.tscn" id="14_8y3bt"]
 [ext_resource type="Script" path="res://UI/texture_progress_bar.gd" id="14_jd2y1"]
+[ext_resource type="PackedScene" uid="uid://dm5j2wmmhnkv1" path="res://bricks/short_blue_brick.tscn" id="15_0qxrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqhio"]
 size = Vector2(160, 22)
@@ -25,14 +27,6 @@ game_stats = ExtResource("2_nkat3")
 position = Vector2(80, 224)
 
 [node name="SpaceBackground" parent="." instance=ExtResource("2_wswaa")]
-
-[node name="ScoreLabel" type="Label" parent="."]
-offset_right = 160.0
-offset_bottom = 23.0
-text = "SCORE"
-label_settings = ExtResource("5_wic0o")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="PlayerBall" parent="." instance=ExtResource("7_umxke")]
 position = Vector2(80, 199)
@@ -47,41 +41,48 @@ position = Vector2(80, 251)
 shape = SubResource("RectangleShape2D_uqhio")
 
 [node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(80, 89)
+position = Vector2(81, 52)
 
 [node name="BlueBrick" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(32, 98)
+position = Vector2(33, 61)
 
 [node name="BlueBrick2" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(92, 113)
+position = Vector2(93, 76)
 
 [node name="BlueBrick3" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(68, 113)
+position = Vector2(69, 76)
 
 [node name="BlueBrick4" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(56, 98)
+position = Vector2(57, 61)
 
 [node name="BlueBrick5" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(104, 98)
+position = Vector2(105, 61)
 
 [node name="BlueBrick6" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(128, 98)
-
-[node name="BlueBrick7" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(140, 49)
-
-[node name="BlueBrick8" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(20, 49)
-
-[node name="BlueBrick9" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(52, 64)
-rotation = -0.785398
-
-[node name="BlueBrick10" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(104, 64)
-rotation = 0.785398
+position = Vector2(129, 61)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 160.0
+offset_bottom = 21.0
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SCORE:"
+label_settings = ExtResource("5_wic0o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ComboLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "COMBO:"
+label_settings = ExtResource("5_wic0o")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BallHealth" parent="CanvasLayer" instance=ExtResource("10_2ssh3")]
 
@@ -109,3 +110,45 @@ texture_under = ExtResource("12_fhft7")
 texture_progress = ExtResource("13_yab43")
 script = ExtResource("14_jd2y1")
 ship = NodePath("../../Ship")
+
+[node name="ThinBlueBrick" parent="." instance=ExtResource("14_8y3bt")]
+position = Vector2(14, 95)
+
+[node name="ThinBlueBrick2" parent="." instance=ExtResource("14_8y3bt")]
+position = Vector2(40, 95)
+
+[node name="ThinBlueBrick3" parent="." instance=ExtResource("14_8y3bt")]
+position = Vector2(65, 95)
+
+[node name="ThinBlueBrick4" parent="." instance=ExtResource("14_8y3bt")]
+position = Vector2(92, 95)
+
+[node name="ThinBlueBrick5" parent="." instance=ExtResource("14_8y3bt")]
+position = Vector2(118, 95)
+
+[node name="ThinBlueBrick6" parent="." instance=ExtResource("14_8y3bt")]
+position = Vector2(145, 95)
+
+[node name="ShortBlueBrick" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(9, 112)
+
+[node name="ShortBlueBrick2" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(28, 111)
+
+[node name="ShortBlueBrick3" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(49, 110)
+
+[node name="ShortBlueBrick4" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(70, 110)
+
+[node name="ShortBlueBrick5" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(92, 111)
+
+[node name="ShortBlueBrick6" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(109, 111)
+
+[node name="ShortBlueBrick7" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(130, 111)
+
+[node name="ShortBlueBrick8" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(130, 111)

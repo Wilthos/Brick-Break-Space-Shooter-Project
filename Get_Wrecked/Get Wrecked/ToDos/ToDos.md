@@ -15,4 +15,4 @@
 - ~~Ball bounce off spawner but not damage it.~~
 - Have numerical damage done momentarily flash above enemy and player when damage done
 - Ball upgrade where it periodically bursts and hurts non-brick enemies
-- 
+- Make smaller bricks with placeholder assets.

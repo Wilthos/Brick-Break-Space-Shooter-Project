@@ -4,9 +4,10 @@ extends Node2D
 @export var ball_speed = 50 
 
 @onready var ship: Ship = $Ship
-@onready var score_label: Label = $ScoreLabel
+@onready var score_label: Label = %ScoreLabel
 @onready var player_ball: PlayerBall = $PlayerBall
 @onready var ball_health: BallHealth = $CanvasLayer/BallHealth
+@onready var combo_label: Label = %ComboLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,15 +23,25 @@ func _ready() -> void:
 	# Make the ball move in a random direction upward
 	player_ball.move_component.velocity = Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized() * ball_speed
 	
-	# Put a scrore of 0 to begin with
+	# Update score label
 	update_score_label(game_stats.score)
 	game_stats.score_changed.connect(update_score_label)
 	
+	# Update combo label
+	update_combo_label(game_stats.combo_count)
+	game_stats.combo_changed.connect(update_combo_label)
+	
+	# only show the combo label when you have a min combo
+	game_stats.min_combo_reached.connect(make_combo_visible)
+	
 	# Break the combo count when the ship is hit
 	ship.stats_component.health_decreased.connect(func():
+		make_combo_invisible()
 		game_stats.combo_count = 0
 		print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
 		)
+	
+	
 	
 	# Game Over is the ship/player is destroyed
 	ship.tree_exiting.connect(func():
@@ -69,3 +80,16 @@ func _ready() -> void:
 # Function to update the score label in the level GUI
 func update_score_label(new_score: int) -> void:
 	score_label.text = "Score: " + str(new_score)
+
+# Function to make the combo count visible once a 
+func make_combo_visible() -> void:
+	combo_label.show()
+
+# Function to make the combo count visible once a 
+func make_combo_invisible() -> void:
+	combo_label.hide()
+
+
+# Function to update the score label in the level GUI
+func update_combo_label(new_combo: int) -> void:
+	combo_label.text = "Combo: " + str(new_combo)

@@ -130,7 +130,7 @@ position = Vector2(0, -11)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor"]
 sprite_frames = SubResource("SpriteFrames_8kb2e")
-animation = &"bank_left"
+animation = &"center"
 autoplay = "center"
 
 [node name="FlameAnimatedSprite" type="AnimatedSprite2D" parent="Anchor"]
@@ -139,7 +139,6 @@ position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_uccm0")
 animation = &"center"
 autoplay = "center"
-frame_progress = 0.438326
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("2_i67j3")
