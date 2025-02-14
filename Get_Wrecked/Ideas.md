@@ -1,0 +1,5 @@
+- destroying some bricks give items
+- Let you pick ball launch angle
+	- Maybe slow down time when you launch the ball
+- Make the game a bit musical
+- More intense graphics and animations the higher the combo?
