@@ -1,0 +1,3 @@
+- Create a HealboxCompnent (area 2D), based on the HitBoxComponent
+	- it will emit a "heal" signal that a HealCompnent will interpret for the node's HurtBoxComponent
+- also create a Heal Component that will be meant to pair with HurtboxComponents to tell the HurtboxComponent how to handle the HealBoxComponent

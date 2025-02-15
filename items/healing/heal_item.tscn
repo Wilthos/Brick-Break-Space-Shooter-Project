@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8simorfl5h7h"]
+
+[ext_resource type="Script" path="res://items/healing/heal_item.gd" id="1_07cqg"]
+[ext_resource type="Script" path="res://components/healbox_component.gd" id="1_qvho0"]
+
+[node name="HealItem" type="Node2D"]
+script = ExtResource("1_07cqg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="HealboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("1_qvho0")

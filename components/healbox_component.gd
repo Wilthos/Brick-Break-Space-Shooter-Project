@@ -1,11 +1,11 @@
 # Give the component a class name so it can be instanced as a custom node
-class_name HitboxComponent
+class_name HealboxComponent
 extends Area2D
 
-@onready var hitbox_component: HitboxComponent = $"."
+@onready var healbox_component: HealboxComponent = $"."
 
 # Export the damage amount this hitbox deals
-@export var damage = 1.0
+@export var heal = 1.0
 
 # Create a signal for when the hitbox hits a hurtbox
 signal hit_hurtbox(hurtbox)
@@ -34,7 +34,8 @@ func _on_hurtbox_entered(hurtbox: HurtboxComponent):
 	
 	# Added by Wilthos
 	# If a laser hits a brick, ignore damage
-	if hurtbox.get_parent().name.contains("Brick") and (hitbox_component.get_parent().name.contains("Laser") or hitbox_component.get_parent().name.contains("Node")): return
+	#if hurtbox.get_parent().name.contains("Brick") and (hitbox_component.get_parent().name.contains("Laser") or hitbox_component.get_parent().name.contains("Node")): return
 	
 	# Have the hurtbox signal out that it was hit
-	hurtbox.hurt.emit(self)
+	hurtbox.heal.emit(self)
+	print_debug("heal hits hurt")

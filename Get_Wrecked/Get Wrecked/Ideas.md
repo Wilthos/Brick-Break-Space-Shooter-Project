@@ -3,3 +3,5 @@
 	- Maybe slow down time when you launch the ball
 - Make the game a bit musical
 - More intense graphics and animations the higher the combo?
+- Lasers do chip damage to bricks?
+	- Maybe and upgrade that allows that?

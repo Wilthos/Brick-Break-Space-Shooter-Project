@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dh8frerdxeqf1" path="res://UI/ball_health.tscn" id="10_2ssh3"]
 [ext_resource type="Texture2D" uid="uid://bjcdrlgb6jrc6" path="res://assets/health_bar/healthbarUnder.png" id="12_fhft7"]
 [ext_resource type="Texture2D" uid="uid://b4d15sd23x313" path="res://assets/health_bar/healthbarProgress.png" id="13_yab43"]
-[ext_resource type="PackedScene" uid="uid://d2fwfmkaelw7q" path="res://bricks/thin_blue_brick.tscn" id="14_8y3bt"]
 [ext_resource type="Script" path="res://UI/texture_progress_bar.gd" id="14_jd2y1"]
+[ext_resource type="PackedScene" uid="uid://ca30np7er4t7" path="res://items/healing/heal_item_1.tscn" id="15_0l477"]
 [ext_resource type="PackedScene" uid="uid://dm5j2wmmhnkv1" path="res://bricks/short_blue_brick.tscn" id="15_0qxrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqhio"]
@@ -40,26 +40,11 @@ script = ExtResource("8_wcmc4")
 position = Vector2(80, 251)
 shape = SubResource("RectangleShape2D_uqhio")
 
-[node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(80, 39)
-
 [node name="BlueBrick" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(32, 48)
+position = Vector2(81, 72)
 
-[node name="BlueBrick2" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(92, 63)
-
-[node name="BlueBrick3" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(68, 63)
-
-[node name="BlueBrick4" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(56, 48)
-
-[node name="BlueBrick5" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(104, 48)
-
-[node name="BlueBrick6" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(128, 48)
+[node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
+position = Vector2(81, 60)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -111,50 +96,71 @@ texture_progress = ExtResource("13_yab43")
 script = ExtResource("14_jd2y1")
 ship = NodePath("../../Ship")
 
-[node name="ThinBlueBrick" parent="." instance=ExtResource("14_8y3bt")]
-position = Vector2(13, 82)
-
-[node name="ThinBlueBrick2" parent="." instance=ExtResource("14_8y3bt")]
-position = Vector2(39, 82)
-
-[node name="ThinBlueBrick3" parent="." instance=ExtResource("14_8y3bt")]
-position = Vector2(65, 82)
-
-[node name="ThinBlueBrick4" parent="." instance=ExtResource("14_8y3bt")]
-position = Vector2(91, 82)
-
-[node name="ThinBlueBrick5" parent="." instance=ExtResource("14_8y3bt")]
-position = Vector2(117, 82)
-
-[node name="ThinBlueBrick6" parent="." instance=ExtResource("14_8y3bt")]
-position = Vector2(144, 82)
-
 [node name="ShortBlueBrick" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(6, 98)
+position = Vector2(4, 95)
 
 [node name="ShortBlueBrick2" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(18, 98)
+position = Vector2(12, 95)
 
 [node name="ShortBlueBrick3" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(30, 98)
+position = Vector2(20, 103)
 
 [node name="ShortBlueBrick4" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(42, 98)
+position = Vector2(28, 111)
 
 [node name="ShortBlueBrick5" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(54, 98)
+position = Vector2(36, 103)
 
 [node name="ShortBlueBrick6" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(66, 98)
+position = Vector2(44, 95)
 
 [node name="ShortBlueBrick7" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(78, 98)
+position = Vector2(52, 95)
 
 [node name="ShortBlueBrick8" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(90, 98)
+position = Vector2(60, 103)
 
 [node name="ShortBlueBrick9" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(102, 98)
+position = Vector2(68, 111)
 
 [node name="ShortBlueBrick10" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(114, 98)
+position = Vector2(76, 119)
+
+[node name="ShortBlueBrick11" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(84, 119)
+
+[node name="ShortBlueBrick12" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(92, 112)
+
+[node name="ShortBlueBrick13" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(100, 104)
+
+[node name="ShortBlueBrick14" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(108, 95)
+
+[node name="ShortBlueBrick15" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(116, 95)
+
+[node name="ShortBlueBrick16" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(124, 103)
+
+[node name="ShortBlueBrick17" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(132, 111)
+
+[node name="ShortBlueBrick18" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(140, 103)
+
+[node name="ShortBlueBrick19" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(148, 95)
+
+[node name="ShortBlueBrick20" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(156, 95)
+
+[node name="ShortBlueBrick21" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(69, 64)
+
+[node name="ShortBlueBrick22" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(93, 64)
+
+[node name="HealItem1" parent="." instance=ExtResource("15_0l477")]
+position = Vector2(140, 215)

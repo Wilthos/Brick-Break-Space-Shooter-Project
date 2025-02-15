@@ -21,7 +21,8 @@ func _ready() -> void:
 	# Position the ball
 	player_ball.position = Vector2(80,200)
 	# Make the ball move in a random direction upward
-	player_ball.move_component.velocity = Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized() * ball_speed
+	#player_ball.move_component.velocity = Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized() * ball_speed
+	player_ball.move_component.velocity = Vector2(0,0)
 	
 	# Update score label
 	update_score_label(game_stats.score)

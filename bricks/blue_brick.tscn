@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3fxb6rty70gn" path="res://assets/Bricks/Blue/blue_brick_min.png" id="5_yk8k5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu5jo"]
-size = Vector2(23.1423, 10.6229)
+size = Vector2(31.1843, 14.5916)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5d2xk"]
 animations = [{
@@ -43,15 +43,16 @@ size = Vector2(32, 15.1775)
 script = ExtResource("2_roxg2")
 
 [node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_mu5jo")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-scale = Vector2(0.75, 0.765)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5d2xk")
 animation = &"max"
 autoplay = "max"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
 position = Vector2(-3.57628e-07, 0)
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ueux1")

@@ -6,8 +6,8 @@
 		- Link Laser fire rate with max combo achieved.
 			- I think this will work well
 - Keep track of level stats and build ranking system
-	- Number of enemies killed (help)
-	- Number of enemies getting past you on screen (hurt)
+	- Number of enemies killed (helps grade)
+	- Number of enemies getting past you on screen (hurts grade)
 	- Time taken to beat level (help the quicker)
 	- Damage Taken (hurt)
 	- Accuracy? (Hits/shots fired)
@@ -15,4 +15,7 @@
 - ~~Ball bounce off spawner but not damage it.~~
 - Have numerical damage done momentarily flash above enemy and player when damage done
 - Ball upgrade where it periodically bursts and hurts non-brick enemies
-- Make smaller bricks with placeholder assets.
+- ~~Make smaller bricks with placeholder assets.~~
+- Set up max ship health stuff
+- Combo Broken animation
+- Lively combo counter animation 

@@ -61,6 +61,11 @@ func _process(delta: float) -> void:
 		fire_lasers()
 		fire_rate_timer.start()
 		auto_fire_on = true
+	elif Input.is_action_just_pressed("Fire") and auto_fire_on:
+		#fire_lasers()
+		fire_rate_timer.stop()
+		auto_fire_on = false
+	
 	
 	#fire_rate_timer.wait_time = 0.2 / (0.5 + (game_stats.maxcombo*5 * 0.01))
 	fire_rate_timer.wait_time = 0.5 / (1.25 + (game_stats.maxcombo* 0.1))

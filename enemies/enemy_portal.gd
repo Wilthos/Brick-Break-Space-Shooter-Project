@@ -33,9 +33,9 @@ func _ready() -> void:
 	pink_enemy_spawn_timer.timeout.connect(handle_spawn.bind(PinkEnemyScene,pink_enemy_spawn_timer,12.0))
 	
 	game_stats.score_changed.connect(func(new_score: int):
-		if new_score > 50:
+		if new_score > 250:
 			yellow_enemy_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
-		if new_score > 150:
+		if new_score > 750:
 			pink_enemy_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 		)
 		

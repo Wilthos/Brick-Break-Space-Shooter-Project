@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://buhk4f2lxlx3u"]
+[gd_scene load_steps=32 format=3 uid="uid://buhk4f2lxlx3u"]
 
 [ext_resource type="Texture2D" uid="uid://c45jqgt0qw53h" path="res://assets/ship.png" id="1_1rwxh"]
 [ext_resource type="Script" path="res://player_ship/ship.gd" id="1_eocui"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="16_4mx55"]
 [ext_resource type="AudioStream" uid="uid://4mc2w48vyywl" path="res://sounds/laser_sound.wav" id="16_s8o5s"]
 [ext_resource type="PackedScene" uid="uid://tmwgcd083lhh" path="res://player_paddle/player_paddle.tscn" id="18_yl1cc"]
+[ext_resource type="Script" path="res://components/heal_component.gd" id="20_jpoln"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aepjl"]
 atlas = ExtResource("1_1rwxh")
@@ -183,6 +184,11 @@ polygon = PackedVector2Array(-8, 2, -3, -3, -3, -4, -1, -7, 1, -7, 3, -4, 3, -3,
 
 [node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component", "hurtbox_component")]
 script = ExtResource("13_yotoj")
+stats_component = NodePath("../StatsComponent")
+hurtbox_component = NodePath("../HurtboxComponent")
+
+[node name="HealComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component", "hurtbox_component")]
+script = ExtResource("20_jpoln")
 stats_component = NodePath("../StatsComponent")
 hurtbox_component = NodePath("../HurtboxComponent")
 

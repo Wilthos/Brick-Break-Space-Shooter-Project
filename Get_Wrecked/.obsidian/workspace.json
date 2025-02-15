@@ -22,35 +22,20 @@
             }
           },
           {
-            "id": "43f7e5637abf0047",
+            "id": "de2320e3ad55c1f4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ideas.md",
+                "file": "Healing items.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ideas"
-            }
-          },
-          {
-            "id": "0a7c04feaccf77e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Get Wrecked/ToDos/ToDos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ToDos"
+              "title": "Healing items"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -197,13 +182,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0a7c04feaccf77e0",
+  "active": "302323d4bdfc6797",
   "lastOpenFiles": [
+    "Healing items.md",
     "Get Wrecked/Overview.md",
-    "They Fly/They Fly.md",
-    "Ideas.md",
-    "They Fly",
+    "Get Wrecked/Ideas.md",
     "Get Wrecked/ToDos/ToDos.md",
+    "They Fly/They Fly.md",
+    "They Fly",
     "2025-02-13.md",
     "Untitled.canvas",
     "Combo System.md",

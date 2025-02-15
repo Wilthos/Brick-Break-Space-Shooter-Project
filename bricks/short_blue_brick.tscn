@@ -35,17 +35,17 @@ script = ExtResource("2_pnimq")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0.0190992, 0.0446844)
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_4baqv")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8vcro")
 animation = &"max"
 autoplay = "max"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_7l225")
 
 [node name="StatsComponent" parent="." index="4"]
