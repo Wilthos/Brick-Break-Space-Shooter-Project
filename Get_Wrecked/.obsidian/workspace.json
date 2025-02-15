@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "They Fly/They Fly.md",
+                "file": "Get Wrecked/ToDos/ToDos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "They Fly"
+              "title": "ToDos"
             }
           }
         ],
@@ -199,11 +199,11 @@
   },
   "active": "0a7c04feaccf77e0",
   "lastOpenFiles": [
-    "Ideas.md",
+    "Get Wrecked/Overview.md",
     "They Fly/They Fly.md",
+    "Ideas.md",
     "They Fly",
     "Get Wrecked/ToDos/ToDos.md",
-    "Get Wrecked/Overview.md",
     "2025-02-13.md",
     "Untitled.canvas",
     "Combo System.md",

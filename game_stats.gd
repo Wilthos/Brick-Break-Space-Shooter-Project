@@ -26,6 +26,7 @@ extends Resource
 
 @export var combo_count: int = 0 :
 	set(value):
+		if value == 0 and combo_count !=0: combo_broken.emit()
 		combo_count = value
 		combo_changed.emit(combo_count)
 		if combo_count >= 3: min_combo_reached.emit()
@@ -38,5 +39,6 @@ extends Resource
 
 signal score_changed(new_score)
 signal combo_changed(new_combo)
+signal combo_broken()
 signal no_more_portals()
 signal min_combo_reached()

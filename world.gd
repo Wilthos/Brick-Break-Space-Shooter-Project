@@ -34,9 +34,11 @@ func _ready() -> void:
 	# only show the combo label when you have a min combo
 	game_stats.min_combo_reached.connect(make_combo_visible)
 	
+	# Remove the combo gui when the combo is broken
+	game_stats.combo_broken.connect(make_combo_invisible)
+	
 	# Break the combo count when the ship is hit
 	ship.stats_component.health_decreased.connect(func():
-		make_combo_invisible()
 		game_stats.combo_count = 0
 		print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
 		)
