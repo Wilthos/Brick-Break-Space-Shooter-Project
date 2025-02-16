@@ -1,25 +1,25 @@
 # Give the component a class name so it can be instanced as a custom node
-class_name DestroyedComponent
+class_name ItemDropComponent
 extends Node
 
 # Export the actor this component will operate on
 @export var actor: Node2D
 
-# Grab access to the stats so we can tell when the health has reached zero
-@export var stats_component: StatsComponent
+# Grab access to the destroy component to know when the object is destroyed
+@export var destroyed_component: DestroyedComponent
 
 # Export and grab access to a spawner component so we can create an effect on death
-@export var destroy_effect_spawner_component: SpawnerComponent
+@export var item_spawner_component: SpawnerComponent
 
 func _ready() -> void:
 	# Connect the the no health signal on our stats to the destroy function
-	stats_component.no_health.connect(destroy)
+	destroyed_component.actor_destroyed.connect(drop_item)
 
-func destroy() -> void:
+func drop_item() -> void:
 	# create an effect (from the spawner component) and free the actor
-	destroy_effect_spawner_component.spawn(actor.global_position)
-	actor.queue_free()
-	actor_destroyed.emit() # Emit a signal telling this was object was destroyed
+	item_spawner_component.spawn(actor.global_position)
+	#actor.queue_free()
+	item_dropped.emit() # Emit a signal telling an item was dropped
 
 #Create a signal to emite when something it destroyed
-signal actor_destroyed()
+signal item_dropped()

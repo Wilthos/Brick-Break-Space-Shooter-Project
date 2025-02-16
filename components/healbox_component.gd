@@ -2,7 +2,7 @@
 class_name HealboxComponent
 extends Area2D
 
-@onready var healbox_component: HealboxComponent = $"."
+@onready var healbox_component: HealboxComponent = %HealboxComponent
 
 # Export the damage amount this hitbox deals
 @export var heal = 1.0

@@ -1,0 +1,8 @@
+Make a ItemDropComponent that takes in 
+
+Look for a signal (need to add) from the DestroyedComponent and then use SpawnerComponent to spawn an item
+
+Give items a move component (like an enemy projectile) and have it move in some way 
+
+And will cause the item to be dropped and move in a certain way
+

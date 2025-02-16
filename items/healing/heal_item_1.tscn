@@ -1,61 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://ca30np7er4t7"]
+[gd_scene load_steps=7 format=3 uid="uid://ca30np7er4t7"]
 
 [ext_resource type="PackedScene" uid="uid://b8simorfl5h7h" path="res://items/healing/heal_item.tscn" id="1_kxaao"]
-[ext_resource type="Texture2D" uid="uid://bkklr3ts0bm0s" path="res://items/healing/heal_item_1_tmp.png" id="2_qwflj"]
 [ext_resource type="Script" path="res://items/healing/heal_item_1.gd" id="2_redov"]
+[ext_resource type="Texture2D" uid="uid://bypnpdua7qtj0" path="res://assets/health_items/item_2.png" id="3_umj3k"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="4_ckh2k"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xa130"]
-atlas = ExtResource("2_qwflj")
-region = Rect2(68, 0, 17, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_upo2w"]
-atlas = ExtResource("2_qwflj")
-region = Rect2(51, 0, 17, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rjwo5"]
-atlas = ExtResource("2_qwflj")
-region = Rect2(34, 0, 17, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4v71"]
-atlas = ExtResource("2_qwflj")
-region = Rect2(17, 0, 17, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r6sly"]
-atlas = ExtResource("2_qwflj")
-region = Rect2(0, 0, 17, 17)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_o26w8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxa1f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xa130")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_upo2w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rjwo5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y4v71")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r6sly")
+"texture": ExtResource("3_umj3k")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1qo2"]
+size = Vector2(20.0664, 11.985)
+
 [node name="HealItem1" instance=ExtResource("1_kxaao")]
 script = ExtResource("2_redov")
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="Anchor" index="0"]
 scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_o26w8")
+sprite_frames = SubResource("SpriteFrames_bxa1f")
 autoplay = "default"
-frame_progress = 0.0882271
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HealboxComponent" index="0"]
+[node name="HealboxComponent" parent="Anchor" index="1"]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/HealboxComponent" index="0"]
 scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-6.47516, -8.52929, -1.53391, -8.47023, -1.47485, -7.5056, -0.510222, -7.48591, -0.510222, -6.52129, 0.474091, -6.5016, 0.513463, -7.5056, 1.47809, -7.48591, 1.49778, -8.52929, 6.4784, -8.48991, 6.4784, -7.52529, 7.44303, -7.48591, 7.50209, -6.52129, 8.4864, -6.5016, 8.4864, 0.487025, 7.4494, 0.499894, 7.49623, 1.48316, 6.48955, 1.48316, 6.48955, 2.46642, 5.45947, 2.48983, 5.4637, 3.54975, 4.48664, 3.50968, 4.48664, 4.49802, 3.48438, 4.49802, 3.4983, 5.48636, 2.48212, 5.5142, 2.50996, 6.53038, 1.50362, 6.49453, 1.54078, 7.46076, 0.463062, 7.46076, 0.463062, 8.46415, -0.466007, 8.50131, -0.540333, 7.46076, -1.50656, 7.46076, -1.54373, 6.53169, -2.58428, 6.49453, -2.62144, 5.49114, -3.58768, 5.56546, -3.51335, 4.56207, -4.51674, 4.5249, -4.51674, 3.59584, -5.48297, 3.48435, -5.52014, 2.59244, -6.52353, 2.59244, -6.56069, 1.58905, -7.52692, 1.47756, -7.56409, 0.548494, -8.49315, 0.437006, -8.49315, -6.47526, -7.48976, -6.47526, -7.48976, -7.44149, -6.4492, -7.47865)
+shape = SubResource("RectangleShape2D_l1qo2")
+
+[node name="MoveComponent" type="Node" parent="." index="1" node_paths=PackedStringArray("actor")]
+script = ExtResource("4_ckh2k")
+actor = NodePath("..")
+velocity = Vector2(0, 30)

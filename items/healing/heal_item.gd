@@ -1,7 +1,7 @@
 class_name HealItem
 extends Node2D
 
-@onready var healbox_component: HealboxComponent = $HealboxComponent
+@onready var healbox_component: HealboxComponent = %HealboxComponent
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
