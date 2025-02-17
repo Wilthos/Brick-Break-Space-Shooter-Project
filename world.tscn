@@ -41,10 +41,10 @@ position = Vector2(80, 251)
 shape = SubResource("RectangleShape2D_uqhio")
 
 [node name="BlueBrick" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(81, 72)
+position = Vector2(81, 87)
 
 [node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(81, 60)
+position = Vector2(81, 75)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -97,127 +97,127 @@ script = ExtResource("14_jd2y1")
 ship = NodePath("../../Ship")
 
 [node name="ShortBlueBrick" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(4, 83)
+position = Vector2(4, 100)
 
 [node name="ShortBlueBrick2" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(12, 83)
+position = Vector2(12, 100)
 
 [node name="ShortBlueBrick3" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(20, 91)
+position = Vector2(20, 107)
 
 [node name="ShortBlueBrick4" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(28, 99)
+position = Vector2(28, 115)
 
 [node name="ShortBlueBrick5" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(36, 91)
+position = Vector2(36, 107)
 
 [node name="ShortBlueBrick6" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(44, 83)
+position = Vector2(44, 100)
 
 [node name="ShortBlueBrick7" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(52, 83)
+position = Vector2(52, 100)
 
 [node name="ShortBlueBrick8" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(60, 91)
+position = Vector2(60, 107)
 
 [node name="ShortBlueBrick9" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(68, 99)
+position = Vector2(68, 114)
 
 [node name="ShortBlueBrick10" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(76, 107)
+position = Vector2(76, 122)
 
 [node name="ShortBlueBrick11" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(84, 107)
+position = Vector2(84, 122)
 
 [node name="ShortBlueBrick12" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(92, 100)
+position = Vector2(92, 114)
 
 [node name="ShortBlueBrick13" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(100, 92)
+position = Vector2(100, 107)
 
 [node name="ShortBlueBrick14" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(108, 84)
+position = Vector2(108, 100)
 
 [node name="ShortBlueBrick15" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(116, 84)
+position = Vector2(116, 100)
 
 [node name="ShortBlueBrick16" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(124, 92)
+position = Vector2(124, 108)
 
 [node name="ShortBlueBrick17" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(132, 100)
+position = Vector2(132, 116)
 
 [node name="ShortBlueBrick18" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(140, 92)
+position = Vector2(140, 108)
 
 [node name="ShortBlueBrick19" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(148, 84)
+position = Vector2(148, 100)
 
 [node name="ShortBlueBrick20" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(156, 84)
+position = Vector2(156, 100)
 
 [node name="ShortBlueBrick21" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(69, 64)
+position = Vector2(69, 79)
 
 [node name="ShortBlueBrick22" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(93, 64)
+position = Vector2(93, 79)
 
 [node name="ShortRedBrick" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(4, 91)
+position = Vector2(4, 111)
 
 [node name="ShortRedBrick2" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(12, 91)
+position = Vector2(12, 111)
 
 [node name="ShortRedBrick3" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(20, 99)
+position = Vector2(20, 119)
 
 [node name="ShortRedBrick4" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(28, 107)
+position = Vector2(28, 127)
 
 [node name="ShortRedBrick6" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(36, 99)
+position = Vector2(36, 119)
 
 [node name="ShortRedBrick7" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(44, 91)
+position = Vector2(44, 111)
 
 [node name="ShortRedBrick8" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(52, 91)
+position = Vector2(52, 111)
 
 [node name="ShortRedBrick9" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(60, 99)
+position = Vector2(60, 119)
 
 [node name="ShortRedBrick10" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(68, 107)
+position = Vector2(68, 127)
 
 [node name="ShortRedBrick11" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(76, 115)
+position = Vector2(76, 135)
 
 [node name="ShortRedBrick12" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(84, 115)
+position = Vector2(84, 135)
 
 [node name="ShortRedBrick13" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(92, 108)
+position = Vector2(92, 128)
 
 [node name="ShortRedBrick14" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(100, 100)
+position = Vector2(100, 120)
 
 [node name="ShortRedBrick15" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(108, 92)
+position = Vector2(108, 112)
 
 [node name="ShortRedBrick16" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(116, 92)
+position = Vector2(116, 112)
 
 [node name="ShortRedBrick17" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(124, 100)
+position = Vector2(124, 120)
 
 [node name="ShortRedBrick18" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(132, 108)
+position = Vector2(132, 128)
 
 [node name="ShortRedBrick19" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(140, 100)
+position = Vector2(140, 120)
 
 [node name="ShortRedBrick20" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(148, 92)
+position = Vector2(148, 112)
 
 [node name="ShortRedBrick21" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(156, 92)
+position = Vector2(156, 112)

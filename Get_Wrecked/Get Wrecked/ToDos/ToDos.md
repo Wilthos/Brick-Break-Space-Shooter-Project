@@ -16,6 +16,6 @@
 - Have numerical damage done momentarily flash above enemy and player when damage done
 - Ball upgrade where it periodically bursts and hurts non-brick enemies
 - ~~Make smaller bricks with placeholder assets.~~
-- Set up max ship health stuff
+- ~~Set up max ship health stuff~~
 - Combo Broken animation
 - Lively combo counter animation 
