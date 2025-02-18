@@ -77,3 +77,5 @@ stream = ExtResource("15_hlrmq")
 volume_db = -5.0
 bus = &"Sounds"
 script = ExtResource("16_8deor")
+
+[node name="DamageNumbersOrigin" type="Node2D" parent="."]

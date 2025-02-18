@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ResourceStash="*res://resource_stash.gd"
 MusicPlayer="*res://music_player.tscn"
+DamageNumbers="*res://damage_numbers.gd"
 
 [display]
 

@@ -14,6 +14,7 @@ extends Node2D
 @onready var destroyed_component: DestroyedComponent = $DestroyedComponent
 @onready var score_component: ScoreComponent = $ScoreComponent
 @onready var variable_pitch_audio_stream_player: VariablePitchAudioStreamPlayer = $VariablePitchAudioStreamPlayer
+@onready var damage_numbers_origin: Node2D = $DamageNumbersOrigin
 
 func _ready() -> void:
 	stats_component.no_health.connect(func():
@@ -42,6 +43,8 @@ func _ready() -> void:
 		shake_component.tween_shake()
 		variable_pitch_audio_stream_player.play_with_variance()
 		#print("Green Enemy Health: ", stats_component.health)
+		# Call function to diplay damage done
+		DamageNumbers.display_number(hitbox.damage,damage_numbers_origin.global_position)
 	)
 	stats_component.no_health.connect(queue_free)
 	hitbox_component.hit_hurtbox.connect(destroyed_component.destroy.unbind(1))

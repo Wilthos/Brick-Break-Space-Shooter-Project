@@ -158,7 +158,7 @@ script = ExtResource("1_5uqmi")
 
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("8_dd4nc")
-health = 30.0
+health = 50000.0
 
 [node name="GreenEnemySpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -231,3 +231,5 @@ gravity_scale = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyPortalBody"]
 position = Vector2(0.046875, 0.015625)
 shape = SubResource("RectangleShape2D_k418c")
+
+[node name="DamageNumbersOrigin" type="Node2D" parent="."]

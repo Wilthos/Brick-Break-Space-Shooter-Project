@@ -68,6 +68,9 @@ autoplay = "default"
 frame = 4
 frame_progress = 1.0
 
+[node name="StatsComponent" parent="." index="1"]
+health = 10000.0
+
 [node name="VisibleOnScreenNotifier2D" parent="." index="3"]
 position = Vector2(4.76837e-07, -0.5)
 scale = Vector2(0.6, 0.55)
@@ -121,3 +124,6 @@ scene = ExtResource("9_ka4lh")
 [node name="PauseState" type="Node" parent="States" index="3"]
 unique_name_in_owner = true
 script = ExtResource("6_k3tgv")
+
+[node name="DamageNumbersOrigin" parent="." index="15"]
+position = Vector2(0, -8)

@@ -6,6 +6,7 @@ extends Node2D
 @export var PinkEnemyScene: PackedScene
 
 @export var game_stats: GameStats
+@onready var damage_numbers_origin: Node2D = $DamageNumbersOrigin
 
 var margin = 8
 var spwan_range_x = 50
@@ -28,14 +29,14 @@ var screen_width = ProjectSettings.get_setting("display/window/size/viewport_wid
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	green_enemy_spawn_timer.timeout.connect(handle_spawn.bind(GreenEnemyScene,green_enemy_spawn_timer,2.0))
-	yellow_enemy_spawn_timer.timeout.connect(handle_spawn.bind(YellowEnemyScene,yellow_enemy_spawn_timer,6.0))
-	pink_enemy_spawn_timer.timeout.connect(handle_spawn.bind(PinkEnemyScene,pink_enemy_spawn_timer,12.0))
+	green_enemy_spawn_timer.timeout.connect(handle_spawn.bind(GreenEnemyScene,green_enemy_spawn_timer,1.0))
+	yellow_enemy_spawn_timer.timeout.connect(handle_spawn.bind(YellowEnemyScene,yellow_enemy_spawn_timer,5.0))
+	pink_enemy_spawn_timer.timeout.connect(handle_spawn.bind(PinkEnemyScene,pink_enemy_spawn_timer,10.0))
 	
 	game_stats.score_changed.connect(func(new_score: int):
-		if new_score > 250:
+		if new_score > 100:
 			yellow_enemy_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
-		if new_score > 750:
+		if new_score > 450:
 			pink_enemy_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 		)
 		
@@ -52,6 +53,8 @@ func _ready() -> void:
 		shake_component.tween_shake()
 		variable_pitch_audio_stream_player.play_with_variance()
 		#print("Green Enemy Health: ", stats_component.health)
+		# Call function to diplay damage done
+		DamageNumbers.display_number(hitbox.damage,damage_numbers_origin.global_position)
 	)
 	stats_component.no_health.connect(queue_free)
 	

@@ -47,7 +47,7 @@ autoplay = "move"
 frame_progress = 0.70299
 
 [node name="StatsComponent" parent="." index="1"]
-health = 3.0
+health = 300.0
 
 [node name="MoveComponent" parent="." index="2"]
 velocity = Vector2(0, 40)
@@ -62,3 +62,6 @@ shape = SubResource("CircleShape2D_out0u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
 shape = SubResource("CircleShape2D_gtb54")
 debug_color = Color(0.959656, 2.88785e-07, 0.520413, 0.42)
+
+[node name="DamageNumbersOrigin" parent="." index="14"]
+position = Vector2(0, -8)

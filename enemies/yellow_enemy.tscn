@@ -42,7 +42,7 @@ autoplay = "default"
 frame_progress = 0.148763
 
 [node name="StatsComponent" parent="." index="1"]
-health = 6.0
+health = 600.0
 
 [node name="MoveComponent" parent="." index="2"]
 velocity = Vector2(0, 10)
@@ -65,3 +65,6 @@ adjust_amount = 10
 script = ExtResource("4_hgisb")
 actor = NodePath("..")
 move_component = NodePath("../MoveComponent")
+
+[node name="DamageNumbersOrigin" parent="." index="15"]
+position = Vector2(0, -5)
