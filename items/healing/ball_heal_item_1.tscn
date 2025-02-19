@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dry50x7r8gcxy"]
+
+[ext_resource type="PackedScene" uid="uid://brf833rh2ilxm" path="res://items/healing/ball_heal_item.tscn" id="1_ftnnb"]
+[ext_resource type="Script" path="res://items/healing/ball_heal_item_1.gd" id="2_lrmaj"]
+[ext_resource type="Texture2D" uid="uid://dgitnlfsb0wie" path="res://assets/health_items/ball_heal_item.png" id="3_pk2k3"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="4_otvqu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ioy0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pk2k3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh55b"]
+size = Vector2(20, 12.1014)
+
+[node name="BallHealItem1" instance=ExtResource("1_ftnnb")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_lrmaj")
+
+[node name="AnimatedSprite2D" parent="Anchor" index="0"]
+sprite_frames = SubResource("SpriteFrames_ioy0m")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallHealboxComponent" index="0"]
+position = Vector2(0, 0.0061841)
+shape = SubResource("RectangleShape2D_sh55b")
+
+[node name="MoveComponent" type="Node" parent="." index="2" node_paths=PackedStringArray("actor")]
+script = ExtResource("4_otvqu")
+actor = NodePath("..")
+velocity = Vector2(0, 30)

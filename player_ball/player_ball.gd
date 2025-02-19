@@ -4,8 +4,9 @@ extends CharacterBody2D
 
 const VELOCITY_LIMIT = 50
 
-@export var ball_speed = 50
+@export var ball_speed = 40
 @export var speed_multiplier = 1.0
+
 
 var last_collider_id
 

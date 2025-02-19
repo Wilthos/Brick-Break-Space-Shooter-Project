@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b8simorfl5h7h" path="res://items/healing/heal_item.tscn" id="1_kxaao"]
 [ext_resource type="Script" path="res://items/healing/heal_item_1.gd" id="2_redov"]
-[ext_resource type="Texture2D" uid="uid://bypnpdua7qtj0" path="res://assets/health_items/item_2.png" id="3_umj3k"]
+[ext_resource type="Texture2D" uid="uid://bypnpdua7qtj0" path="res://assets/health_items/player_heal_item.png" id="3_umj3k"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="4_ckh2k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxa1f"]

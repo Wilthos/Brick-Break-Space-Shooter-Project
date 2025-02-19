@@ -36,6 +36,10 @@ extends Resource
 @export var damage_taken: int = 0 :
 	set(value):
 		damage_taken = value
+		
+@export var ball_damage_taken: int = 0 :
+	set(value):
+		ball_damage_taken = value
 
 signal score_changed(new_score)
 signal combo_changed(new_combo)

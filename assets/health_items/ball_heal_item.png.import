@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bypnpdua7qtj0"
-path="res://.godot/imported/item_2.png-6eae96e5b75560e94cda26fa095bb751.ctex"
+uid="uid://dgitnlfsb0wie"
+path="res://.godot/imported/ball_heal_item.png-c32550d41d36acc32f9a3462ba6792f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/health_items/item_2.png"
-dest_files=["res://.godot/imported/item_2.png-6eae96e5b75560e94cda26fa095bb751.ctex"]
+source_file="res://assets/health_items/ball_heal_item.png"
+dest_files=["res://.godot/imported/ball_heal_item.png-c32550d41d36acc32f9a3462ba6792f7.ctex"]
 
 [params]
 

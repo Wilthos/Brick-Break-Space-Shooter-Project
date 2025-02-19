@@ -21,3 +21,6 @@ signal hurt(hitbox)
 
 # Create a signal for when this hurtbox is hit by a healbox
 signal heal(hitbox)
+
+# Create a signal for when this hurtbox is hit by a Ball healbox
+signal ball_heal(hitbox)

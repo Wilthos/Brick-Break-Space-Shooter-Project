@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://kv1ad4msgxqs"]
+[gd_scene load_steps=17 format=3 uid="uid://kv1ad4msgxqs"]
 
 [ext_resource type="PackedScene" uid="uid://buhk4f2lxlx3u" path="res://player_ship/ship.tscn" id="1_u6n25"]
 [ext_resource type="Script" path="res://world.gd" id="1_y13p3"]
@@ -8,14 +8,13 @@
 [ext_resource type="LabelSettings" uid="uid://dmtgl4wsvfd7y" path="res://fonts/default_label_settings.tres" id="5_wic0o"]
 [ext_resource type="PackedScene" uid="uid://bhdbcqhia7siy" path="res://player_ball/player_ball.tscn" id="7_umxke"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="8_wcmc4"]
-[ext_resource type="PackedScene" uid="uid://b5uev8sljra78" path="res://bricks/blue_brick.tscn" id="9_3bhrl"]
 [ext_resource type="PackedScene" uid="uid://dh8frerdxeqf1" path="res://UI/ball_health.tscn" id="10_2ssh3"]
 [ext_resource type="Texture2D" uid="uid://bjcdrlgb6jrc6" path="res://assets/health_bar/healthbarUnder.png" id="12_fhft7"]
 [ext_resource type="Texture2D" uid="uid://b4d15sd23x313" path="res://assets/health_bar/healthbarProgress.png" id="13_yab43"]
 [ext_resource type="Script" path="res://UI/texture_progress_bar.gd" id="14_jd2y1"]
 [ext_resource type="PackedScene" uid="uid://dm5j2wmmhnkv1" path="res://bricks/short_blue_brick.tscn" id="15_0qxrm"]
-[ext_resource type="PackedScene" uid="uid://d2fwfmkaelw7q" path="res://bricks/thin_blue_brick.tscn" id="16_mleiy"]
 [ext_resource type="PackedScene" uid="uid://34t0wxf6oo6b" path="res://bricks/short_red_brick.tscn" id="16_p6a54"]
+[ext_resource type="PackedScene" uid="uid://dkmi1l0bw6umn" path="res://bricks/short_green_brick.tscn" id="16_srpym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqhio"]
 size = Vector2(160, 22)
@@ -41,11 +40,8 @@ script = ExtResource("8_wcmc4")
 position = Vector2(80, 251)
 shape = SubResource("RectangleShape2D_uqhio")
 
-[node name="BlueBrick" parent="." instance=ExtResource("9_3bhrl")]
-position = Vector2(84.0191, 69.2382)
-
 [node name="EnemyPortal" parent="." instance=ExtResource("5_c8mpq")]
-position = Vector2(84.0191, 57.2382)
+position = Vector2(80, 41)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -97,112 +93,92 @@ texture_progress = ExtResource("13_yab43")
 script = ExtResource("14_jd2y1")
 ship = NodePath("../../Ship")
 
-[node name="ShortBlueBrick" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(4, 96)
-
-[node name="ShortBlueBrick2" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(12, 96)
-
 [node name="ShortBlueBrick3" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(20, 103)
+position = Vector2(20, 104)
 
 [node name="ShortBlueBrick4" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(28, 111)
+position = Vector2(28, 104)
 
 [node name="ShortBlueBrick5" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(36, 103)
-
-[node name="ShortBlueBrick6" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(44, 96)
-
-[node name="ShortBlueBrick7" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(52, 96)
+position = Vector2(36, 104)
 
 [node name="ShortBlueBrick8" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(60, 103)
+position = Vector2(60, 104)
 
 [node name="ShortBlueBrick9" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(68, 110)
+position = Vector2(68, 104)
 
 [node name="ShortBlueBrick10" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(76, 118)
+position = Vector2(76, 104)
 
 [node name="ShortBlueBrick11" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(84, 118)
+position = Vector2(84, 104)
 
 [node name="ShortBlueBrick12" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(92, 110)
+position = Vector2(92, 104)
 
 [node name="ShortBlueBrick13" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(100, 103)
-
-[node name="ShortBlueBrick14" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(108, 96)
-
-[node name="ShortBlueBrick15" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(116, 96)
+position = Vector2(100, 104)
 
 [node name="ShortBlueBrick16" parent="." instance=ExtResource("15_0qxrm")]
 position = Vector2(124, 104)
 
 [node name="ShortBlueBrick17" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(132, 112)
+position = Vector2(132, 104)
 
 [node name="ShortBlueBrick18" parent="." instance=ExtResource("15_0qxrm")]
 position = Vector2(140, 104)
 
-[node name="ShortBlueBrick19" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(148, 96)
+[node name="ShortBlueBrick61" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(4, 72)
 
-[node name="ShortBlueBrick20" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(156, 96)
+[node name="ShortBlueBrick62" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(12, 72)
 
-[node name="ShortBlueBrick21" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(72.0191, 61.2382)
+[node name="ShortBlueBrick66" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(44, 72)
 
-[node name="ShortBlueBrick22" parent="." instance=ExtResource("15_0qxrm")]
-position = Vector2(96.0191, 61.2382)
+[node name="ShortBlueBrick67" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(52, 72)
 
-[node name="ShortRedBrick" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(29.7116, 48.1341)
+[node name="ShortBlueBrick74" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(108, 72)
 
-[node name="ThinBlueBrick" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(29.7307, 54.9435)
+[node name="ShortBlueBrick75" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(116, 72)
 
-[node name="ThinBlueBrick14" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(135.346, 72.8988)
-rotation = 2.35619
+[node name="ShortBlueBrick79" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(156, 72)
 
-[node name="ThinBlueBrick15" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(29, 21)
-rotation = 2.35619
+[node name="ShortBlueBrick80" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(148, 72)
 
-[node name="ThinBlueBrick13" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(29.0382, 72.8988)
-rotation = 0.785398
+[node name="ShortRedBrick4" parent="." instance=ExtResource("16_p6a54")]
+position = Vector2(28, 88)
 
-[node name="ThinBlueBrick16" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(135.365, 21)
-rotation = 0.785398
-
-[node name="ThinBlueBrick2" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(19.3654, 49.4027)
-rotation = 1.5708
-
-[node name="ThinBlueBrick3" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(40.2848, 49.5381)
-rotation = 4.71239
+[node name="ShortRedBrick5" parent="." instance=ExtResource("16_p6a54")]
+position = Vector2(36, 29)
 
 [node name="ShortRedBrick3" parent="." instance=ExtResource("16_p6a54")]
-position = Vector2(131.346, 48.1787)
+position = Vector2(132, 88)
 
-[node name="ThinBlueBrick7" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(131.365, 54.9882)
+[node name="ShortGreenBrick" parent="." instance=ExtResource("16_srpym")]
+position = Vector2(68, 88)
 
-[node name="ThinBlueBrick8" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(121, 49.4474)
-rotation = 1.5708
+[node name="ShortGreenBrick2" parent="." instance=ExtResource("16_srpym")]
+position = Vector2(12, 29)
 
-[node name="ThinBlueBrick9" parent="." instance=ExtResource("16_mleiy")]
-position = Vector2(141.919, 49.5827)
-rotation = 4.71239
+[node name="ShortGreenBrick3" parent="." instance=ExtResource("16_srpym")]
+position = Vector2(60, 29)
+
+[node name="ShortRedBrick6" parent="." instance=ExtResource("16_p6a54")]
+position = Vector2(124, 29)
+
+[node name="ShortGreenBrick5" parent="." instance=ExtResource("16_srpym")]
+position = Vector2(100, 29)
+
+[node name="ShortGreenBrick6" parent="." instance=ExtResource("16_srpym")]
+position = Vector2(148, 29)
+
+[node name="ShortGreenBrick4" parent="." instance=ExtResource("16_srpym")]
+position = Vector2(92, 88)

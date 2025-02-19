@@ -83,6 +83,7 @@ _data = {
 }
 
 [node name="PinkEnemyProjectile" type="Node2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_tq7k7")
 
 [node name="Anchor" type="Node2D" parent="."]

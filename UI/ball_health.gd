@@ -17,8 +17,10 @@ func set_max_hearts(max: int):
 		var heart = HeartIcon.instantiate()
 		add_child(heart)
 
-func update_hearts(current_health: int):
+func update_hearts(current_health: int, max_health: int):
 	var hearts = get_children()
+	
+	if current_health > max_health: current_health = max_health
 	
 	for i in range(current_health):
 		hearts[i].update(true)

@@ -11,9 +11,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Define the balls max health (may need to change handling later)
+	var ball_max_health = player_ball.stats_component.health
+	print_debug("Max Ball Health: ", ball_max_health)
 	# Display the Player Ball's Health
-	ball_health.set_max_hearts(player_ball.stats_component.health)
-	ball_health.update_hearts(player_ball.stats_component.health)
+	ball_health.set_max_hearts(ball_max_health)
+	ball_health.update_hearts(player_ball.stats_component.health,ball_max_health)
+	
 	
 	# Randomize the seed so no game is the same
 	randomize() 
@@ -21,7 +25,7 @@ func _ready() -> void:
 	# Position the ball
 	player_ball.position = Vector2(80,200)
 	# Make the ball move in a random direction upward
-	player_ball.move_component.velocity = Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized() * ball_speed
+	player_ball.move_component.velocity = Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized() * player_ball.ball_speed
 	#player_ball.move_component.velocity = Vector2(0,0)
 	
 	# Update score label
@@ -41,7 +45,7 @@ func _ready() -> void:
 	# Break the combo count when the ship is hit
 	ship.stats_component.health_decreased.connect(func():
 		game_stats.combo_count = 0
-		print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
+		#print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
 		)
 	
 	
@@ -64,12 +68,24 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://menus/level_complete.tscn")
 	)
 	
+	# heal the ball when a ball heal item is 
+	ship.hurtbox_component.ball_heal.connect(func(ball_healbox_component: BallHealboxComponent):
+		player_ball.stats_component.health += ball_healbox_component.heal
+		if player_ball.stats_component.health > ball_max_health: player_ball.stats_component.health = ball_max_health
+		)
+	
 	# Update the Ball Health GUI when the ball's health is changed
 	player_ball.stats_component.health_changed.connect(func():
 		#print_debug(player_ball.stats_component.health)
-		ball_health.update_hearts(player_ball.stats_component.health)
+		# make sure the ball's max health is never exceeded
+		ball_health.update_hearts(player_ball.stats_component.health,ball_max_health)
 		)
 	
+# keep track of how much damage the ship/player takes in a level
+	player_ball.hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
+		game_stats.ball_damage_taken += hitbox_component.damage
+		print_debug("Ball lost! Total Damage: ", game_stats.ball_damage_taken)
+	)
 	
 	# Get the number of EnemyPortals in the start of the level 
 	# and store that number in the game stats
@@ -91,7 +107,6 @@ func make_combo_visible() -> void:
 # Function to make the combo count visible once a 
 func make_combo_invisible() -> void:
 	combo_label.hide()
-
 
 # Function to update the score label in the level GUI
 func update_combo_label(new_combo: int) -> void:

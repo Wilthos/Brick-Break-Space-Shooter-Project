@@ -1,5 +1,5 @@
 # Give the component a class name so it can be instanced as a custom node
-class_name HealboxComponent
+class_name BallHealboxComponent
 extends Area2D
 
 @onready var healbox_component: HealboxComponent = %HealboxComponent
@@ -37,5 +37,5 @@ func _on_hurtbox_entered(hurtbox: HurtboxComponent):
 	#if hurtbox.get_parent().name.contains("Brick") and (hitbox_component.get_parent().name.contains("Laser") or hitbox_component.get_parent().name.contains("Node")): return
 	
 	# Have the hurtbox signal out that it was hit
-	hurtbox.heal.emit(self)
+	hurtbox.ball_heal.emit(self)
 	#print_debug("heal hits hurt")

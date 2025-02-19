@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://brf833rh2ilxm"]
+
+[ext_resource type="Script" path="res://items/healing/ball_heal_item.gd" id="1_oifcn"]
+[ext_resource type="Script" path="res://components/ball_healbox_component.gd" id="2_c3ku5"]
+
+[node name="BallHealItem" type="Node2D"]
+script = ExtResource("1_oifcn")
+
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor"]
+
+[node name="BallHealboxComponent" type="Area2D" parent="."]
+script = ExtResource("2_c3ku5")
