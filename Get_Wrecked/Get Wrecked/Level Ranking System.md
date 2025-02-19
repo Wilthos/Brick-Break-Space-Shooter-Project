@@ -1,0 +1,13 @@
+ Keep track of level stats and build ranking system
+	- Number of enemies killed (helps grade)
+		- Tracking
+	- Number of enemies getting past you on screen (hurts grade)
+		- tracking
+	- Time taken to beat level (help the quicker)
+		- Not yet tracking
+	- Damage Taken (hurt)
+		- Tracking
+	- Accuracy? (Hits/shots fired)
+		- Not sure we need this
+	- Balls lost
+		- Not yet tracking

@@ -20,9 +20,10 @@ func _ready() -> void:
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()
 		game_stats.enemy_destroyed_count += 1
+		if (game_stats.combo_count +1) > game_stats.maxcombo: game_stats.maxcombo = game_stats.combo_count +1
 		game_stats.combo_count += 1
 		# Store the max combo for the level
-		if game_stats.combo_count > game_stats.maxcombo: game_stats.maxcombo = game_stats.combo_count
+		
 		#print_debug("Enemies Destroyed:", game_stats.enemy_destroyed_count)
 		#print_debug("Combo Count: ",game_stats.combo_count)
 		)

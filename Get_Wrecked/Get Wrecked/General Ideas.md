@@ -4,4 +4,4 @@
 - Make the game a bit musical
 - More intense graphics and animations the higher the combo?
 - Lasers do chip damage to bricks?
-	- Maybe and upgrade that allows that?
+	- Maybe an upgrade that allows that?

@@ -66,31 +66,46 @@ layout_mode = 2
 text = "0"
 label_settings = ExtResource("5_05q2k")
 
-[node name="EnemiesPassedHBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="EnemiesPassedHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="EnemiesPassedLabel" type="Label" parent="CenterContainer/VBoxContainer/EnemiesPassedHBoxContainer2"]
+[node name="EnemiesPassedLabel" type="Label" parent="CenterContainer/VBoxContainer/EnemiesPassedHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Enemies Escaped:"
 label_settings = ExtResource("5_05q2k")
 
-[node name="EnemiesPassedValue" type="Label" parent="CenterContainer/VBoxContainer/EnemiesPassedHBoxContainer2"]
+[node name="EnemiesPassedValue" type="Label" parent="CenterContainer/VBoxContainer/EnemiesPassedHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("5_05q2k")
 
-[node name="DamageTakenHBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="DamageTakenHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="DamageTakenLabel" type="Label" parent="CenterContainer/VBoxContainer/DamageTakenHBoxContainer2"]
+[node name="DamageTakenLabel" type="Label" parent="CenterContainer/VBoxContainer/DamageTakenHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Damage Taken:"
 label_settings = ExtResource("5_05q2k")
 
-[node name="DamageTakenValue" type="Label" parent="CenterContainer/VBoxContainer/DamageTakenHBoxContainer2"]
+[node name="DamageTakenValue" type="Label" parent="CenterContainer/VBoxContainer/DamageTakenHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("5_05q2k")
+
+[node name="MaxComboHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MaxComboLabel" type="Label" parent="CenterContainer/VBoxContainer/MaxComboHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Maximum Combo:"
+label_settings = ExtResource("5_05q2k")
+
+[node name="MaxComboValue" type="Label" parent="CenterContainer/VBoxContainer/MaxComboHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"

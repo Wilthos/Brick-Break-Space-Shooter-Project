@@ -221,7 +221,7 @@ game_stats = ExtResource("5_vs84a")
 [node name="ScoreComponent" type="Node" parent="."]
 script = ExtResource("14_mhts2")
 game_stats = ExtResource("5_vs84a")
-adjust_amount = 100
+adjust_amount = 1000
 
 [node name="EnemyPortalBody" type="RigidBody2D" parent="."]
 collision_layer = 256

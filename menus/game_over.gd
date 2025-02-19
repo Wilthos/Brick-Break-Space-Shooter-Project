@@ -25,6 +25,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		# Reset Level Values
 		game_stats.score = 0
+		game_stats.enemy_destroyed_count = 0
+		game_stats.damage_taken = 0
+		game_stats.enemy_passed_count = 0
+		game_stats.maxcombo = 0
+		game_stats.combo_count = 0
 		get_tree().change_scene_to_file("res://world.tscn")
 
 func load_highscore() -> void:

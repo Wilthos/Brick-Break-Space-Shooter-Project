@@ -1,0 +1,8 @@
+- Use this as a base: https://youtu.be/I-4LFHvLF10?si=XSYY-Gg1LCT34kIh
+- Have the text get more "excited" the higher the combo
+	- Have it wiggle more
+	- Have the color change
+	- etc.
+- Have text break or explode or dissolve when the combo is broken
+- Maybe animate every character separately 
+	- or at least animate the updated numbers separately  

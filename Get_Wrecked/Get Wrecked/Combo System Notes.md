@@ -1,0 +1,4 @@
+- Giving Ball a bomb when a certain max combo amount it reached
+	- Bomb will do one damage to all bricks in a certain radius
+- Combo give multiplier to score?
+	- This will require spawn rate tweaking

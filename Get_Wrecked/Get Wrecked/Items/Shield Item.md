@@ -1,0 +1,1 @@
+Have a item that protects the ship and kills enemies

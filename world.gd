@@ -8,6 +8,7 @@ extends Node2D
 @onready var player_ball: PlayerBall = $PlayerBall
 @onready var ball_health: BallHealth = $CanvasLayer/BallHealth
 @onready var combo_label: Label = %ComboLabel
+@onready var rich_combo_label: RichComboLabel = %RichComboLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,14 +34,14 @@ func _ready() -> void:
 	game_stats.score_changed.connect(update_score_label)
 	
 	# Update combo label
-	update_combo_label(game_stats.combo_count)
-	game_stats.combo_changed.connect(update_combo_label)
+	update_rich_combo_label(game_stats.combo_count,game_stats.maxcombo)
+	game_stats.combo_changed.connect(update_rich_combo_label)
 	
 	# only show the combo label when you have a min combo
-	game_stats.min_combo_reached.connect(make_combo_visible)
+	#game_stats.min_combo_reached.connect(make_combo_visible)
 	
 	# Remove the combo gui when the combo is broken
-	game_stats.combo_broken.connect(make_combo_invisible)
+	#game_stats.combo_broken.connect(make_combo_invisible)
 	
 	# Break the combo count when the ship is hit
 	ship.stats_component.health_decreased.connect(func():
@@ -109,5 +110,15 @@ func make_combo_invisible() -> void:
 	combo_label.hide()
 
 # Function to update the score label in the level GUI
-func update_combo_label(new_combo: int) -> void:
-	combo_label.text = "Combo: " + str(new_combo)
+func update_combo_label(new_combo: int, max_combo: int) -> void:
+	combo_label.text = "Combo: " + str(new_combo) + " / " + str(max_combo)
+
+# Function to update the score label in the level GUI
+func update_rich_combo_label(new_combo: int, max_combo: int) -> void:
+	if new_combo >= 20:
+		rich_combo_label.text = "[center][wave amp = 100 freq="+str(10)+"][rainbow freq=.2 sat = 0.8 val =.5]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/rainbow][/wave][/center]"
+	elif new_combo >= 10:
+		rich_combo_label.text = "[center][wave amp = 100 freq="+str(10)+"]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/wave][/center]"
+	else:
+		rich_combo_label.text = "[center][wave amp = 100 freq="+str(new_combo)+"]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/wave][/center]"
+	

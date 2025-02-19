@@ -11,6 +11,7 @@ var save_path = TEST_SAVE_PATH
 @onready var enemies_defeated_value: Label = %EnemiesDefeatedValue
 @onready var damage_taken_value: Label = %DamageTakenValue
 @onready var enemies_passed_value: Label = %EnemiesPassedValue
+@onready var max_combo_value: Label = %MaxComboValue
 
 
 func _ready() -> void:
@@ -22,6 +23,7 @@ func _ready() -> void:
 	enemies_defeated_value.text = str(game_stats.enemy_destroyed_count)
 	damage_taken_value.text = str(game_stats.damage_taken)
 	enemies_passed_value.text = str(game_stats.enemy_passed_count)
+	max_combo_value.text = str(game_stats.maxcombo)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,6 +34,7 @@ func _process(delta: float) -> void:
 		game_stats.damage_taken = 0
 		game_stats.enemy_passed_count = 0
 		game_stats.maxcombo = 0
+		game_stats.combo_count = 0
 		get_tree().change_scene_to_file("res://world.tscn")
 
 #func load_highscore() -> void:

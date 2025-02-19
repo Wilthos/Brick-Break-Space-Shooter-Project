@@ -23,6 +23,7 @@ size = Vector2(160, 22)
 [node name="World" type="Node2D"]
 script = ExtResource("1_y13p3")
 game_stats = ExtResource("2_nkat3")
+ball_speed = null
 
 [node name="Ship" parent="." instance=ExtResource("1_u6n25")]
 position = Vector2(80, 224)
@@ -58,19 +59,6 @@ label_settings = ExtResource("5_wic0o")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichComboLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(160, 5)
-layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 7
-theme_override_font_sizes/italics_font_size = 7
-theme_override_font_sizes/mono_font_size = 7
-theme_override_font_sizes/normal_font_size = 7
-theme_override_font_sizes/bold_font_size = 7
-bbcode_enabled = true
-fit_content = true
-script = ExtResource("13_8w2af")
-
 [node name="ComboLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
@@ -79,6 +67,14 @@ text = "COMBO:"
 label_settings = ExtResource("5_wic0o")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RichComboLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 10)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+script = ExtResource("13_8w2af")
 
 [node name="BallHealth" parent="CanvasLayer" instance=ExtResource("10_2ssh3")]
 
