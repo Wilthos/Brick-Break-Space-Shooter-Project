@@ -125,12 +125,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Known Bugs.md",
+                "file": "Get Wrecked/ToDos/ToDos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Known Bugs"
+              "title": "ToDos"
             }
           },
           {
@@ -297,15 +297,15 @@
   },
   "active": "55f16ba7649d5b69",
   "lastOpenFiles": [
-    "Get Wrecked/ToDos/ToDos.md",
-    "Known Bugs.md",
-    "Get Wrecked/Combo System Notes.md",
-    "Get Wrecked/Brick Breaker Research.md",
-    "Get Wrecked/Combo Text box.md",
     "Get Wrecked/Enemy Spawner Animation.md",
+    "Get Wrecked/Combo System Notes.md",
+    "Get Wrecked/Combo Text box.md",
     "Get Wrecked/World and Level Select Screens.md",
-    "Get Wrecked/World and Level Select Screens 1.md",
+    "Get Wrecked/ToDos/ToDos.md",
+    "Get Wrecked/Brick Breaker Research.md",
     "Get Wrecked/Items/Shield Item.md",
+    "Known Bugs.md",
+    "Get Wrecked/World and Level Select Screens 1.md",
     "Get Wrecked/Items/Healing items.md",
     "Get Wrecked/Items",
     "Get Wrecked/Level Ranking System.md",

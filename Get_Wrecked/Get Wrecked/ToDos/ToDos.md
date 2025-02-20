@@ -1,3 +1,4 @@
+- **update Spawn animation**
 - reimagine enemy spawn rates
 	- Overall, we need to balance the rate of laser fire and the number of enemies that are spawned. We
 	- Ideas for Enemy Spawn Rates
@@ -27,5 +28,5 @@
 - Lively combo counter animation ([[Combo Text box]])
 - come up with some unique enemy types
 - Shield item for ship?
-- [[World and Level Select Screens]]
+- **[[World and Level Select Screens]]**
 - 
