@@ -25,7 +25,9 @@ func _ready() -> void:
 	# keep track of how much damage the ship/player takes in a level
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
 		game_stats.damage_taken += hitbox_component.damage
-		#print_debug("Ship Hit! Total Damage: ", game_stats.damage_taken)
+		game_stats.combo_count = 0
+		print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
+		print_debug("Ship Hit! Total Damage: ", game_stats.damage_taken)
 	)
 
 func fire_lasers() -> void:

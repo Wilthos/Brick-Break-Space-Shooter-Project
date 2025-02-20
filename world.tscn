@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://kv1ad4msgxqs"]
+[gd_scene load_steps=19 format=3 uid="uid://kv1ad4msgxqs"]
 
 [ext_resource type="PackedScene" uid="uid://buhk4f2lxlx3u" path="res://player_ship/ship.tscn" id="1_u6n25"]
 [ext_resource type="Script" path="res://world.gd" id="1_y13p3"]
@@ -8,6 +8,7 @@
 [ext_resource type="LabelSettings" uid="uid://dmtgl4wsvfd7y" path="res://fonts/default_label_settings.tres" id="5_wic0o"]
 [ext_resource type="PackedScene" uid="uid://bhdbcqhia7siy" path="res://player_ball/player_ball.tscn" id="7_umxke"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="8_wcmc4"]
+[ext_resource type="FontFile" uid="uid://bjiqotyibbq00" path="res://fonts/kenney_mini_square.ttf" id="9_mongi"]
 [ext_resource type="PackedScene" uid="uid://dh8frerdxeqf1" path="res://UI/ball_health.tscn" id="10_2ssh3"]
 [ext_resource type="Texture2D" uid="uid://bjcdrlgb6jrc6" path="res://assets/health_bar/healthbarUnder.png" id="12_fhft7"]
 [ext_resource type="Script" path="res://UI/rich_text_label.gd" id="13_8w2af"]
@@ -48,7 +49,7 @@ position = Vector2(80, 41)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_right = 160.0
-offset_bottom = 21.0
+offset_bottom = 22.0
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
@@ -60,13 +61,13 @@ vertical_alignment = 1
 
 [node name="RichComboLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(160, 5)
 layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 7
-theme_override_font_sizes/italics_font_size = 7
-theme_override_font_sizes/mono_font_size = 7
-theme_override_font_sizes/normal_font_size = 7
-theme_override_font_sizes/bold_font_size = 7
+theme_override_fonts/normal_font = ExtResource("9_mongi")
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
 bbcode_enabled = true
 fit_content = true
 script = ExtResource("13_8w2af")

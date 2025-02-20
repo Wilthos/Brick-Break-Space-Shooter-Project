@@ -1,5 +1,6 @@
 - Use this as a base: https://youtu.be/I-4LFHvLF10?si=XSYY-Gg1LCT34kIh
-- Have the text get more "excited" the higher the combo
+- This may be a better resource? https://youtu.be/8CZfqdUd3bM?si=-AA7WJjC9ujQVqSn
+Have the text get more "excited" the higher the combo
 	- Have it wiggle more
 	- Have the color change
 	- etc.

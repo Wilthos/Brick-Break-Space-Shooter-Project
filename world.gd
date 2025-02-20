@@ -44,10 +44,10 @@ func _ready() -> void:
 	#game_stats.combo_broken.connect(make_combo_invisible)
 	
 	# Break the combo count when the ship is hit
-	ship.hurtbox_component.hurt.connect(func():
-		game_stats.combo_count = 0
-		print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
-		)
+	#ship.hurtbox_component.hurt.connect(func():
+		#game_stats.combo_count = 0
+		#print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
+		#)
 	
 	
 	
