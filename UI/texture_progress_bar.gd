@@ -8,8 +8,8 @@ func _ready():
 	update()
 	
 func update():
-	if ship.stats_component.health >  ship.max_ship_health: 
-		ship.stats_component.health = ship.max_ship_health
-	value = ship.stats_component.health / ship.max_ship_health *100
+	if ship.stats_component.health >  ship.stats_component.max_health: 
+		ship.stats_component.health = ship.stats_component.max_health
+	value = ship.stats_component.health / ship.stats_component.max_health *100
 	
 	pass

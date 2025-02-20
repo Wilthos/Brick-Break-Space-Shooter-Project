@@ -12,19 +12,11 @@ extends RigidBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 
-var max_brick_health_flag = true
-var max_brick_health = 0 
 
 func _ready() -> void:
-	# Get Max Health of the Brick and store for brick status textures
-	#print_debug(max_brick_health_flag)
-	#print_debug(max_brick_health)
-	if max_brick_health_flag:
-		max_brick_health = stats_component.health
-		max_brick_health_flag = false
-		# this should only run once
-	#print_debug(max_brick_health_flag)
-	#print_debug(max_brick_health)
+	# Make sure the actor start with full health
+	stats_component.health = stats_component.max_health
+	
 	
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()
@@ -41,9 +33,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Change the way a brick will look depending on its health levels
-	if ((stats_component.health/max_brick_health) <= (2./3.) && (stats_component.health/max_brick_health) > (1./3.)):
+	if ((stats_component.health/stats_component.max_health) <= (2./3.) && (stats_component.health/stats_component.max_health) > (1./3.)):
 		animated_sprite_2d.play("half")
-	elif (stats_component.health/max_brick_health) <= (1./3.):
+	elif (stats_component.health/stats_component.max_health) <= (1./3.):
 		animated_sprite_2d.play("min")
 		
 

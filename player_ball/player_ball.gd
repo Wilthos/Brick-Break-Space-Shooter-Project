@@ -18,6 +18,9 @@ var last_collider_id
 @onready var move_component: MoveComponent = $MoveComponent
 
 func _ready() -> void:
+	# Make sure the actor start with full health
+	stats_component.health = stats_component.max_health
+	
 	hurtbox_component.hurt.connect(func(hitbox: HitboxComponent):
 		position = Vector2(80,200)
 		#position = Vector2(40,200)

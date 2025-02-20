@@ -15,17 +15,12 @@ extends Node2D
 @onready var stats_component: StatsComponent = $StatsComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
-var max_ship_health_flag = true
-var max_ship_health = 0 
-
 var auto_fire_on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#fire_rate_timer.timeout.connect(fire_lasers)
-	if max_ship_health_flag:
-		max_ship_health = stats_component.health
-		max_ship_health_flag = false
+	# Make sure the actor start with full health
+	stats_component.health = stats_component.max_health
 	
 	# keep track of how much damage the ship/player takes in a level
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):

@@ -16,7 +16,13 @@ extends Node2D
 @onready var variable_pitch_audio_stream_player: VariablePitchAudioStreamPlayer = $VariablePitchAudioStreamPlayer
 @onready var damage_numbers_origin: Node2D = $DamageNumbersOrigin
 
+
+
 func _ready() -> void:
+	# Make sure the actor start with full health
+	stats_component.health = stats_component.max_health
+	
+	
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()
 		game_stats.enemy_destroyed_count += 1

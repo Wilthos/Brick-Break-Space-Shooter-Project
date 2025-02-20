@@ -49,3 +49,4 @@ shape = SubResource("RectangleShape2D_7l225")
 
 [node name="StatsComponent" parent="." index="4"]
 health = 2.0
+max_health = 2

@@ -71,6 +71,7 @@ frame_progress = 1.0
 
 [node name="StatsComponent" parent="." index="1"]
 health = 800.0
+max_health = 800
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="3"]
 position = Vector2(4.76837e-07, -0.5)

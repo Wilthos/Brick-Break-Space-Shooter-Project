@@ -13,11 +13,11 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Define the balls max health (may need to change handling later)
-	var ball_max_health = player_ball.stats_component.health
-	print_debug("Max Ball Health: ", ball_max_health)
+	#var ball_max_health = player_ball.stats_component.health
+	#print_debug("Max Ball Health: ", ball_max_health)
 	# Display the Player Ball's Health
-	ball_health.set_max_hearts(ball_max_health)
-	ball_health.update_hearts(player_ball.stats_component.health,ball_max_health)
+	ball_health.set_max_hearts(player_ball.stats_component.max_health)
+	ball_health.update_hearts(player_ball.stats_component.health,player_ball.stats_component.max_health)
 	
 	
 	# Randomize the seed so no game is the same
@@ -44,9 +44,9 @@ func _ready() -> void:
 	#game_stats.combo_broken.connect(make_combo_invisible)
 	
 	# Break the combo count when the ship is hit
-	ship.stats_component.health_decreased.connect(func():
+	ship.hurtbox_component.hurt.connect(func():
 		game_stats.combo_count = 0
-		#print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
+		print_debug("Ship Hit! Combo Broken! Max Combo: ", game_stats.maxcombo)
 		)
 	
 	
@@ -72,14 +72,14 @@ func _ready() -> void:
 	# heal the ball when a ball heal item is 
 	ship.hurtbox_component.ball_heal.connect(func(ball_healbox_component: BallHealboxComponent):
 		player_ball.stats_component.health += ball_healbox_component.heal
-		if player_ball.stats_component.health > ball_max_health: player_ball.stats_component.health = ball_max_health
+		if player_ball.stats_component.health > player_ball.stats_component.max_health: player_ball.stats_component.health = player_ball.stats_component.max_health
 		)
 	
 	# Update the Ball Health GUI when the ball's health is changed
 	player_ball.stats_component.health_changed.connect(func():
 		#print_debug(player_ball.stats_component.health)
 		# make sure the ball's max health is never exceeded
-		ball_health.update_hearts(player_ball.stats_component.health,ball_max_health)
+		ball_health.update_hearts(player_ball.stats_component.health,player_ball.stats_component.max_health)
 		)
 	
 # keep track of how much damage the ship/player takes in a level

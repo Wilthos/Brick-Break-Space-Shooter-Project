@@ -52,6 +52,7 @@ shape = SubResource("RectangleShape2D_bpmr0")
 
 [node name="StatsComponent" parent="." index="4"]
 health = 2.0
+max_health = 2
 
 [node name="ItemSpawnerComponent" type="Node2D" parent="." index="11"]
 script = ExtResource("4_jqdm8")
