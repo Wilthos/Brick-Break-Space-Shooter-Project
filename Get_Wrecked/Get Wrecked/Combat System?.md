@@ -1,0 +1,4 @@
+- Maybe give the enemies and ship stats?
+	- Attack versus defense
+	- HP
+	- Agility

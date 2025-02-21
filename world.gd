@@ -7,8 +7,10 @@ extends Node2D
 @onready var score_label: Label = %ScoreLabel
 @onready var player_ball: PlayerBall = $PlayerBall
 @onready var ball_health: BallHealth = $CanvasLayer/BallHealth
-@onready var combo_label: Label = %ComboLabel
+#@onready var combo_label: Label = %ComboLabel
 @onready var rich_combo_label: RichComboLabel = %RichComboLabel
+@onready var combo_break_shatter_animation: RichTextLabel = %ComboBreakShatterAnimation
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +21,8 @@ func _ready() -> void:
 	ball_health.set_max_hearts(player_ball.stats_component.max_health)
 	ball_health.update_hearts(player_ball.stats_component.health,player_ball.stats_component.max_health)
 	
+	#Make ball invincble foor debug
+	#player_ball.hurtbox_component.is_invincible = true
 	
 	# Randomize the seed so no game is the same
 	randomize() 
@@ -38,10 +42,10 @@ func _ready() -> void:
 	game_stats.combo_changed.connect(update_rich_combo_label)
 	
 	# only show the combo label when you have a min combo
-	#game_stats.min_combo_reached.connect(make_combo_visible)
+	game_stats.min_combo_reached.connect(make_combo_visible)
 	
 	# Remove the combo gui when the combo is broken
-	#game_stats.combo_broken.connect(make_combo_invisible)
+	game_stats.combo_broken.connect(break_rich_combo_label)
 	
 	# Break the combo count when the ship is hit
 	#ship.hurtbox_component.hurt.connect(func():
@@ -103,15 +107,11 @@ func update_score_label(new_score: int) -> void:
 
 # Function to make the combo count visible once a 
 func make_combo_visible() -> void:
-	combo_label.show()
+	rich_combo_label.show()
 
 # Function to make the combo count visible once a 
 func make_combo_invisible() -> void:
-	combo_label.hide()
-
-# Function to update the score label in the level GUI
-func update_combo_label(new_combo: int, max_combo: int) -> void:
-	combo_label.text = "Combo: " + str(new_combo) + " / " + str(max_combo)
+	rich_combo_label.hide()
 
 # Function to update the score label in the level GUI
 func update_rich_combo_label(new_combo: int, max_combo: int) -> void:
@@ -122,3 +122,17 @@ func update_rich_combo_label(new_combo: int, max_combo: int) -> void:
 	else:
 		rich_combo_label.text = "[center][wave amp = 100 freq="+str(new_combo)+"]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/wave][/center]"
 	
+	
+func break_rich_combo_label():
+	combo_break_shatter_animation.text =  rich_combo_label.text
+	combo_break_shatter_animation.show()
+	combo_break_shatter_animation.text = "[center][shatter]" + rich_combo_label.text + "[/shatter][/center]"
+	rich_combo_label.hide()
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("Test"):
+		combo_break_shatter_animation.text =  rich_combo_label.text
+		combo_break_shatter_animation.show()
+		combo_break_shatter_animation.text = "[center][shatter]" + rich_combo_label.text + "[/shatter][/center]"
+		rich_combo_label.hide()
+		

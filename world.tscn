@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://kv1ad4msgxqs"]
+[gd_scene load_steps=21 format=3 uid="uid://kv1ad4msgxqs"]
 
 [ext_resource type="PackedScene" uid="uid://buhk4f2lxlx3u" path="res://player_ship/ship.tscn" id="1_u6n25"]
 [ext_resource type="Script" path="res://world.gd" id="1_y13p3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="8_wcmc4"]
 [ext_resource type="FontFile" uid="uid://bjiqotyibbq00" path="res://fonts/kenney_mini_square.ttf" id="9_mongi"]
 [ext_resource type="PackedScene" uid="uid://dh8frerdxeqf1" path="res://UI/ball_health.tscn" id="10_2ssh3"]
+[ext_resource type="Script" path="res://text_effects/shatter_rich_text_effect.gd" id="11_vsocn"]
 [ext_resource type="Texture2D" uid="uid://bjcdrlgb6jrc6" path="res://assets/health_bar/healthbarUnder.png" id="12_fhft7"]
 [ext_resource type="Script" path="res://UI/rich_text_label.gd" id="13_8w2af"]
 [ext_resource type="Texture2D" uid="uid://b4d15sd23x313" path="res://assets/health_bar/healthbarProgress.png" id="13_yab43"]
@@ -20,6 +21,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqhio"]
 size = Vector2(160, 22)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ca4jw"]
+script = ExtResource("11_vsocn")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_y13p3")
@@ -50,6 +54,7 @@ position = Vector2(80, 41)
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_right = 160.0
 offset_bottom = 22.0
+theme_override_constants/separation = 0
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
@@ -69,17 +74,9 @@ theme_override_font_sizes/mono_font_size = 8
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 8
 bbcode_enabled = true
+text = "[center]Combo:"
 fit_content = true
 script = ExtResource("13_8w2af")
-
-[node name="ComboLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "COMBO:"
-label_settings = ExtResource("5_wic0o")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="BallHealth" parent="CanvasLayer" instance=ExtResource("10_2ssh3")]
 
@@ -108,6 +105,23 @@ texture_progress = ExtResource("13_yab43")
 script = ExtResource("14_jd2y1")
 ship = NodePath("../../Ship")
 
+[node name="ComboBreakShatterAnimation" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 20)
+offset_top = 14.0
+offset_right = 160.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("9_mongi")
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+bbcode_enabled = true
+text = "[center]Combo:"
+custom_effects = [SubResource("RichTextEffect_ca4jw")]
+
 [node name="ShortBlueBrick3" parent="." instance=ExtResource("15_0qxrm")]
 position = Vector2(20, 104)
 
@@ -116,6 +130,24 @@ position = Vector2(28, 104)
 
 [node name="ShortBlueBrick5" parent="." instance=ExtResource("15_0qxrm")]
 position = Vector2(36, 104)
+
+[node name="ShortBlueBrick6" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(20, 51)
+
+[node name="ShortBlueBrick7" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(28, 51)
+
+[node name="ShortBlueBrick21" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(36, 51)
+
+[node name="ShortBlueBrick22" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(124, 51)
+
+[node name="ShortBlueBrick23" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(132, 51)
+
+[node name="ShortBlueBrick24" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(140, 51)
 
 [node name="ShortBlueBrick8" parent="." instance=ExtResource("15_0qxrm")]
 position = Vector2(60, 104)
@@ -131,6 +163,18 @@ position = Vector2(84, 104)
 
 [node name="ShortBlueBrick12" parent="." instance=ExtResource("15_0qxrm")]
 position = Vector2(92, 104)
+
+[node name="ShortBlueBrick14" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(68, 60)
+
+[node name="ShortBlueBrick15" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(76, 60)
+
+[node name="ShortBlueBrick19" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(84, 60)
+
+[node name="ShortBlueBrick20" parent="." instance=ExtResource("15_0qxrm")]
+position = Vector2(92, 60)
 
 [node name="ShortBlueBrick13" parent="." instance=ExtResource("15_0qxrm")]
 position = Vector2(100, 104)

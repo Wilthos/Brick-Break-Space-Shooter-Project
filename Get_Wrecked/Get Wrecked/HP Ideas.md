@@ -1,0 +1,2 @@
+- Maybe have the enemies start with a random buff or debuff to HP
+- And have lasers do a small buff 

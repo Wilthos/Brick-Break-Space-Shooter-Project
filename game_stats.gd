@@ -29,7 +29,7 @@ extends Resource
 		if value == 0 and combo_count !=0: combo_broken.emit()
 		combo_count = value
 		combo_changed.emit(combo_count, maxcombo)
-		if combo_count >= 3: min_combo_reached.emit()
+		if combo_count >= 2: min_combo_reached.emit()
 		
 @export var maxcombo: int = 0 :
 	set(value):
