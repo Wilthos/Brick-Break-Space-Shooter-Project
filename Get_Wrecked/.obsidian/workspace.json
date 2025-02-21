@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Get Wrecked/Combat System.md",
+                "file": "Get Wrecked/Combo Text box.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Combat System"
+              "title": "Combo Text box"
             }
           },
           {
@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Get Wrecked/Combat System.md",
+                "file": "Get Wrecked/Level Ranking System.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Combat System"
+              "title": "Level Ranking System"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -197,20 +197,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5dcccff66cc90ffc",
+  "active": "dafffdcb23d472a7",
   "lastOpenFiles": [
-    "Get Wrecked/HP Ideas.md",
-    "Get Wrecked/Combat System.md",
-    "Get Wrecked/Combo Text box.md",
     "Get Wrecked/Level Ranking System.md",
+    "Get Wrecked/Combat System.md",
     "Get Wrecked/ToDos/ToDos.md",
-    "Get Wrecked/Items/Healing items.md",
-    "Get Wrecked/World and Level Select Screens.md",
-    "Get Wrecked/Enemy Spawner Animation.md",
-    "Get Wrecked/Brick Breaker Research.md",
-    "Get Wrecked/Combo System Notes.md",
-    "Get Wrecked/Overview.md",
+    "Get Wrecked/HP Ideas.md",
     "Get Wrecked/General Ideas.md",
+    "Get Wrecked/Enemy Spawner Animation.md",
+    "Get Wrecked/Combo System Notes.md",
+    "Get Wrecked/Brick Breaker Research.md",
+    "Get Wrecked/World and Level Select Screens.md",
+    "Get Wrecked/Overview.md",
+    "Get Wrecked/Combo Text box.md",
+    "Get Wrecked/Items/Healing items.md",
     "Get Wrecked/Items/Shield Item.md",
     "Known Bugs.md",
     "Get Wrecked/World and Level Select Screens 1.md",

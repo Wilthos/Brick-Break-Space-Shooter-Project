@@ -7,3 +7,10 @@ Have the text get more "excited" the higher the combo
 - Have text break or explode or dissolve when the combo is broken
 - Maybe animate every character separately 
 	- or at least animate the updated numbers separately  
+- Wiggle scales to 10
+	- Max wiggle at 10
+- At 20, get rainbow
+	- We can also adjust aspects of the rainbow with increasing combo from 20 to 50
+- At 50, Change from wiggle to something else
+	- Like pulsing in scale
+	- And also a pulsing in illumination

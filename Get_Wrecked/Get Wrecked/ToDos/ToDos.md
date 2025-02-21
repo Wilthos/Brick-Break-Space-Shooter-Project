@@ -7,7 +7,7 @@
 		- Link Laser fire rate with max combo achieved.
 			- I think this will work well
 	- Maybe we can give (some) enemies a less random and more methodical spawn animation and rate? 
-- **Keep track of level stats and build ranking system**
+- Keep track of level stats and build [[Level Ranking System]]
 	- Number of enemies killed (helps grade)
 	- Number of enemies getting past you on screen (hurts grade)
 	- Time taken to beat level (help the quicker)
@@ -24,9 +24,13 @@
 - Ball upgrade where it periodically bursts and hurts non-brick enemies
 - ~~Make smaller bricks with placeholder assets.~~
 - ~~Set up max ship health stuff~~
-- **Combo Broken animation** 
+- **Combo Broken animation**
+	- Started!
+	- Looks good so far!
 - Lively combo counter animation ([[Combo Text box]])
+	- Started!
 - come up with some unique enemy types
+	- Shoot homing bullets and move from side to side, then move down REALLY fast to get by you.
 - Shield item for ship?
 - **[[World and Level Select Screens]]**
 - 

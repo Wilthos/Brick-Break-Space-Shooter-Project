@@ -1,13 +1,28 @@
  Keep track of level stats and build ranking system
 	- Number of enemies killed (helps grade)
-		- Tracking
-	- Number of enemies getting past you on screen (hurts grade)
-		- tracking
+		- Tracking:
+			- Yes
+		- This can be tracked along with Number of enemies getting past you on screen, which we are also tracking
+		- Together we get: Total_Enemies = Number_of_Enemies_Killed + Number_of_Enemies_Passed 
+		- So we only need to really track Number_of_Enemies_Killed/Total_Enemies which will be 0 - 100%
+		- Weight:
+			- This weight should be heavy to the rank
+			- Maybe 60%-70%?
 	- Time taken to beat level (help the quicker)
-		- Not yet tracking
-	- Damage Taken (hurt)
 		- Tracking
-	- Accuracy? (Hits/shots fired)
-		- Not sure we need this
+			- No
+		- Should probably be ralted to the number of spawners and bricks in play
+			- You should get a longer limit the more "stuff" there is on the screen
+	- Damage Taken
+		- Tracking
+			- Yes
+	- ~~Accuracy? (Hits/shots fired)~~
+		~~- Not sure we need this~~
 	- Balls lost
-		- Not yet tracking
+		- Tracking
+			- Yes
+- Ideas for formula for ranks
+	- Grade system like NA school
+		- Each category will get a grade of 1-100
+			- This can be done anyway really
+		- Each category will also have a weight to it.

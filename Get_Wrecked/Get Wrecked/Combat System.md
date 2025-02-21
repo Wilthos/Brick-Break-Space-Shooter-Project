@@ -1,4 +1,6 @@
 - Maybe give the enemies and ship stats?
-	- Attack versus defense
-	- HP
-	- Agility
+	- Attack 
+	- Defense
+	- Max HP
+	- Agility/Speed
+	- Base Respawn Time (for enemies only)

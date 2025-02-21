@@ -5,3 +5,6 @@
 - More intense graphics and animations the higher the combo?
 - Lasers do chip damage to bricks?
 	- Maybe an upgrade that allows that?
+- To make the game even more varied and involved, we can keep track of the enemies that get past you past a certain point. You would then need to do a whole other game mode after to complete the level.
+	- like chase down the guys you didn't get.
+	- Could be cool
