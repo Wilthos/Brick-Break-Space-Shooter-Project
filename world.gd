@@ -20,9 +20,11 @@ func _ready() -> void:
 	# Display the Player Ball's Health
 	ball_health.set_max_hearts(player_ball.stats_component.max_health)
 	ball_health.update_hearts(player_ball.stats_component.health,player_ball.stats_component.max_health)
+	game_stats.combo_count = 40
+	game_stats.maxcombo = 40
 	
 	#Make ball invincble foor debug
-	#player_ball.hurtbox_component.is_invincible = true
+	player_ball.hurtbox_component.is_invincible = true
 	
 	# Randomize the seed so no game is the same
 	randomize() 
@@ -115,13 +117,15 @@ func make_combo_invisible() -> void:
 
 # Function to update the score label in the level GUI
 func update_rich_combo_label(new_combo: int, max_combo: int) -> void:
-	if new_combo >= 20:
-		rich_combo_label.text = "[center][wave amp = 100 freq="+str(10)+"][rainbow freq=.2 sat = 0.8 val =.5]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/rainbow][/wave][/center]"
+	if new_combo >= 40:
+		rich_combo_label.text = "[center][pulse][shake rate = "+str(new_combo-20)+"][rainbow freq=."+str(40/10)+" sat = 0.8 val =.5]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/rainbow][/shake][/pulse][/center]"
+	elif new_combo >= 20:
+		rich_combo_label.text = "[center][wave amp = 100 freq="+str(10)+"][rainbow freq=."+str(new_combo/10)+" sat = 0.8 val =.5]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/rainbow][/wave][/center]"
 	elif new_combo >= 10:
 		rich_combo_label.text = "[center][wave amp = 100 freq="+str(10)+"]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/wave][/center]"
 	else:
 		rich_combo_label.text = "[center][wave amp = 100 freq="+str(new_combo)+"]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/wave][/center]"
-	
+		#rich_combo_label.text = "[center][shake level = 5 rate="+str(new_combo)+"]Combo: " + str(new_combo) + " / " +str(max_combo) + "[/shake][/center]"
 	
 func break_rich_combo_label():
 	combo_break_shatter_animation.text =  rich_combo_label.text
