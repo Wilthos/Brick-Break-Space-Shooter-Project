@@ -13,72 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Get Wrecked/HP Ideas.md",
+                "file": "Get Wrecked/General Ideas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HP Ideas"
+              "title": "General Ideas"
             }
           },
           {
-            "id": "dafffdcb23d472a7",
+            "id": "856a77b2e7a67150",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Get Wrecked/Items/Healing items.md",
+                "file": "Enemies Become Perks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Healing items"
-            }
-          },
-          {
-            "id": "9ebc308e16432060",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Get Wrecked/ToDos/ToDos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ToDos"
-            }
-          },
-          {
-            "id": "e9ba5ea34fbe7052",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Get Wrecked/ToDos/Next up.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Next up"
-            }
-          },
-          {
-            "id": "5dcccff66cc90ffc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Get Wrecked/Level Ranking System.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Level Ranking System"
+              "title": "Enemies Become Perks"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -225,18 +183,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e9ba5ea34fbe7052",
+  "active": "856a77b2e7a67150",
   "lastOpenFiles": [
-    "Get Wrecked/ToDos/ToDos.md",
-    "Get Wrecked/ToDos/Next up.md",
-    "Get Wrecked/Level Ranking System.md",
-    "Get Wrecked/Items/Paddle Altering Items.md",
+    "Get Wrecked/General Ideas.md",
+    "Enemies Become Perks.md",
+    "Get Wrecked/Combat System.md",
+    "Get Wrecked/HP Ideas.md",
     "Get Wrecked/Items/Healing items.md",
+    "Get Wrecked/ToDos/ToDos.md",
+    "Get Wrecked/Level Ranking System.md",
+    "Get Wrecked/ToDos/Next up.md",
+    "Get Wrecked/Items/Paddle Altering Items.md",
     "Get Wrecked/Combo Text box.md",
     "Get Wrecked/Combo System Notes.md",
-    "Get Wrecked/HP Ideas.md",
-    "Get Wrecked/Combat System.md",
-    "Get Wrecked/General Ideas.md",
     "Get Wrecked/Enemy Spawner Animation.md",
     "Get Wrecked/Brick Breaker Research.md",
     "Get Wrecked/World and Level Select Screens.md",

@@ -1,0 +1,5 @@
+- After killing a certain number of a certain enemies, you get a perk of some sort
+- I want the first enemy to be a "shield" enemy, then the player gets a shield item/power-up/upgrade once the goal is achieved 
+- Either just get points when kiling the enemies
+	- OR, when you deplete an enemies health, they will be stunned for some time, and then you can collect them with your ball
+- 

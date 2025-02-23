@@ -20,11 +20,11 @@ func _ready() -> void:
 	# Display the Player Ball's Health
 	ball_health.set_max_hearts(player_ball.stats_component.max_health)
 	ball_health.update_hearts(player_ball.stats_component.health,player_ball.stats_component.max_health)
-	game_stats.combo_count = 40
-	game_stats.maxcombo = 40
+	#game_stats.combo_count = 40
+	#game_stats.maxcombo = 40
 	
 	#Make ball invincble foor debug
-	player_ball.hurtbox_component.is_invincible = true
+	#player_ball.hurtbox_component.is_invincible = true
 	
 	# Randomize the seed so no game is the same
 	randomize() 
