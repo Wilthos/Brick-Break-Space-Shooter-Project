@@ -8,3 +8,4 @@
 - To make the game even more varied and involved, we can keep track of the enemies that get past you past a certain point. You would then need to do a whole other game mode after to complete the level.
 	- like chase down the guys you didn't get.
 	- Could be cool
+- Have the ball collect things and then you only get them when you make contact with the ball. 
