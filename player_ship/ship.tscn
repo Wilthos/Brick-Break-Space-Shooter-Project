@@ -173,8 +173,11 @@ sprite = NodePath("../Anchor")
 
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("11_dr1df")
+actor_level = 5
 health = 10.0
 max_health = 10
+attack = 50
+defense = 100
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 collision_mask = 0

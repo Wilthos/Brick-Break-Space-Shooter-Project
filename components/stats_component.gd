@@ -2,6 +2,17 @@
 class_name StatsComponent
 extends Node
 
+##
+# Actor Level
+##
+@export var actor_level: int = 1 :
+	set(value):
+		actor_level = value
+
+
+###
+# HP & MAX HP 
+###
 # Create the health variable and connect a setter
 @export var health: float = 1:
 	set(value):
@@ -20,6 +31,18 @@ extends Node
 @export var max_health: int = 1 :
 	set(value):
 		max_health = value
+##
+# Attack
+##
+@export var attack: int = 5 :
+	set(value):
+		attack = value
+##
+# Defense
+##
+@export var defense: int = 5 :
+	set(value):
+		defense = value
 
 # Create our signals for health
 signal health_changed() # Emit when the health value has changed
