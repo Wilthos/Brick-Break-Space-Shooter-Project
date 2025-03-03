@@ -1,0 +1,8 @@
+- Labor Statistics Portfolio Piece
+	- Pull Labor Stats via Google
+	- Make 2-3 plots
+	- Do 2-3 stats test
+	- Put all in a Markdown file
+- Look into UpWork and Fiver
+- Work on game a bit
+- 
